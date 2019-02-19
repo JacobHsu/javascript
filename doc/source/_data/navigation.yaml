@@ -1,10 +1,15 @@
 {
   "logo": {
-    "text": "Hexo Doc Theme Seed",
+    "text": "Hello JavaScript",
     "type": "link",
     "path": "index.html"
   },
   "main": [
+    {
+      "text": "Array Methods",
+      "type": "link",
+      "path": "array_methods.html"
+    },
     {
       "text": "SWAGGER",
       "type": "label"
