@@ -11,6 +11,11 @@
       "path": "array_methods.html"
     },
     {
+      "text": "Array Merge",
+      "type": "link",
+      "path": "array_merge.html"
+    },
+    {
       "text": "SWAGGER",
       "type": "label"
     },
