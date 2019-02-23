@@ -16,6 +16,16 @@
       "path": "array_merge.html"
     },
     {
+      "text": "Event",
+      "type": "link",
+      "path": "event.html"
+    },
+    {
+      "text": "AJAX",
+      "type": "link",
+      "path": "ajax.html"
+    },
+    {
       "text": "SWAGGER",
       "type": "label"
     },
