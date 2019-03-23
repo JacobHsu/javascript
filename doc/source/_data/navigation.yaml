@@ -21,9 +21,53 @@
       "path": "event.html"
     },
     {
+      "text": "Performance",
+      "type": "link",
+      "path": "performance.html"
+    },
+    {
       "text": "AJAX",
       "type": "link",
       "path": "ajax.html"
+    },
+    {
+      "text": "RESTful API",
+      "type": "link",
+      "path": "RESTfulAPI.html"
+    },
+    {
+      "text": "Deep Copy",
+      "type": "link",
+      "path": "copy.html"
+    },
+    {
+      "text": "Closures",
+      "type": "link",
+      "path": "closures.html"
+    },
+    {
+      "text": "This",
+      "type": "link",
+      "path": "this.html"
+    },
+    {
+      "text": "F2E",
+      "type": "label"
+    },
+    {
+      "text": "Promise",
+      "type": "link",
+      "path": "promise.html"
+    },
+    {
+      "text": "Cookie",
+      "type": "link",
+      "path": "F2E/cookie.html"
+    },
+    {
+      "text": "Operators",
+      "type": "link",
+      "path": "operators.html"
     },
     {
       "text": "SWAGGER",
