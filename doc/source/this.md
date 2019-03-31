@@ -166,6 +166,29 @@ callName.call(undefined, '呼叫'); // "全域" "呼叫" (this.name, name)
 callName.call(obj, '呼叫'); // "區域" "呼叫" (this.name, name)
 ```
 
+bind 是ES5中新增的一個方法，可以改變函數內部的this指向
+
+
+bind的應用場景  
+借用Array的原生方法
+
+https://jsbin.com/pupasabapa/edit?js,console
+```js
+var a = {};
+Array.prototype.push.bind(a, "hello", "world")();
+
+console.log(a); 
+// [object Object] {
+//   0: "hello",
+//   1: "world",
+//   length: 2
+// }
+```
+http://www.dengzhr.com/js/1069
+
+
+
+
 ### 箭頭函式
 > 「箭頭函式沒有自己的 this」
 

@@ -19,6 +19,51 @@ xhr.send(null)
 [XMLHttpRequest.readyState](https://developer.mozilla.org/zh-TW/docs/Web/API/XMLHttpRequest/readyState)  
 [HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)  
 
+
+取得用get傳遞之網址列資訊(Query String)  
+
+https://jsbin.com/katifugevu/edit?js,console,output
+```js
+//取得網址字串
+var url = location.href;
+    url = 'http://example.com/?userid=jacob.hsu';
+//再來用去尋找網址列中是否有資料傳遞(QueryString)
+if(url.indexOf('?')!=-1)
+{
+    var id = "";
+    //在此直接將各自的參數資料切割放進ary中
+    var ary = url.split('?')[1].split('&');
+    // console.log(ary); ["userid=jacob.hsu"]
+    
+    //下迴圈去搜尋每個資料參數
+    for(i=0;i<=ary.length-1;i++)
+    {
+        //如果資料名稱為id的話那就把他取出來
+        if(ary[i].split('=')[0] == 'userid')
+            id = ary[i].split('=')[1];
+            console.log(id); //"jacob.hsu"
+    }
+    
+}
+```
+
+ref : 
+https://ithelp.ithome.com.tw/articles/10190254
+
+
+
+ex: http://blog.xuite.net/ahdaa/blog1/test.html?id=AD&val1=02&val2=22#achorAD
+```js
+  location.href     // 完整的網址
+  location.protocol // 協定　　　　　　 http:
+  location.hostname // 伺服器名稱　　　 blog.xuite.net
+  location.host     // 伺服器:埠號　　　blog.xuite.net:80
+  location.port     // 埠號　　　　　　 80
+  location.pathname // host之後的部份  /ahdaa/blog1/test.html?id=AD&val1=02&val2=22#achorAD
+  location.search   // 含?之後所有字串　?id=AD&val1=02&val2=22#achorAD
+  location.hash     // 含#之後所有字串　#achorAD(通常用於錨點)
+```
+
 ### 跨域
 
 瀏覽器有同源策略，不允許ajax訪問  

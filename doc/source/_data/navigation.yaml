@@ -6,14 +6,27 @@
   },
   "main": [
     {
+      "text": "Array",
+      "type": "label"
+    },
+    {
       "text": "Array Methods",
       "type": "link",
-      "path": "array_methods.html"
+      "path": "array/array_methods.html"
     },
     {
       "text": "Array Merge",
       "type": "link",
-      "path": "array_merge.html"
+      "path": "array/array_merge.html"
+    },
+    {
+      "text": "Array Insert",
+      "type": "link",
+      "path": "array/array_insert.html"
+    },
+    {
+      "text": "Note",
+      "type": "label"
     },
     {
       "text": "Event",
@@ -31,6 +44,11 @@
       "path": "ajax.html"
     },
     {
+      "text": "Asynchronous",
+      "type": "link",
+      "path": "asynchronous.html"
+    },
+    {
       "text": "RESTful API",
       "type": "link",
       "path": "RESTfulAPI.html"
@@ -46,6 +64,16 @@
       "path": "closures.html"
     },
     {
+      "text": "Scope",
+      "type": "link",
+      "path": "scope.html"
+    },
+    {
+      "text": "Variable",
+      "type": "link",
+      "path": "variable.html"
+    },
+    {
       "text": "This",
       "type": "link",
       "path": "this.html"
@@ -58,6 +86,11 @@
       "text": "Promise",
       "type": "link",
       "path": "promise.html"
+    },
+    {
+      "text": "GraphQL",
+      "type": "link",
+      "path": "F2E/GraphQL.html"
     },
     {
       "text": "Cookie",

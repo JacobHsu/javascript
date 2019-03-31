@@ -3,6 +3,8 @@ title: Array methods
 
 # Array
 
+生成新陣列 `map` `filter`  
+
 ## forEach 
 
 遍歷所有元素
@@ -125,6 +127,29 @@ console.log(result);
 // expected output: true
 ```
 
+## reduce
+
+[Array.prototype.reduce()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)  
+`reduce()` 方法將一個累加器及陣列中每項元素（由左至右）傳入回呼函式，將陣列化為單一值。  
+
+```js
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+```
+
+Return longest string in array  
+https://jsbin.com/razufufago/edit?js,console
+
+```js
+var arr = ["vue", "raact","JavaScript", "Angular", "jQuery"];
+var longest = arr.reduce((a, b) => a.length > b.length ? a : b, '');
+console.log(longest); //  "JavaScript"
+```
+
 # examples
 
 https://jsbin.com/yapugucezi/edit?js,console
@@ -179,5 +204,7 @@ console.log(arr1); // [6, 8, 10]
 ```
 
 ref: https://hacpai.com/article/1547790109416?r=Vanessa
+
+
 
 
