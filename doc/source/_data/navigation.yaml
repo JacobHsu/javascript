@@ -25,6 +25,20 @@
       "path": "array/array_insert.html"
     },
     {
+      "text": "Object​ keys",
+      "type": "link",
+      "path": "array/object​_keys.html"
+    },
+    {
+      "text": "Cases",
+      "type": "label"
+    },
+    {
+      "text": "Case string",
+      "type": "link",
+      "path": "cases/str.html"
+    },
+    {
       "text": "Note",
       "type": "label"
     },
