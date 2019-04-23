@@ -22,3 +22,12 @@ ERROR Deployer not found: git
 
 `$doc> hexo g`
 `$doc> hexo d`
+
+
+## Notes
+
+[【Hexo異常】fatal: in unpopulated submodule '.deploy_git'](https://blog.csdn.net/nomasp/article/details/79504699) 
+
+把它刪掉，然後重新生成和部署。
+`rm -rf .deploy_git`  
+`hexo g`  `hexo d`  
