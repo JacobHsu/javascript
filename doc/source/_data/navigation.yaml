@@ -25,9 +25,18 @@
       "path": "array/array_insert.html"
     },
     {
+      "text": "Object​",
+      "type": "label"
+    },
+    {
+      "text": "Object assign",
+      "type": "link",
+      "path": "object/assign.html"
+    },
+    {
       "text": "Object​ keys",
       "type": "link",
-      "path": "array/object​_keys.html"
+      "path": "object/object​_keys.html"
     },
     {
       "text": "Cases",
