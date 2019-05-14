@@ -19,3 +19,13 @@ var replaceStr = str.replace(/get|post|put|delete/, "");
 
 console.log(replaceStr) // "hello  world"
 ```
+
+
+## url 
+
+[Array.join()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/join)  
+```js
+var url = 'http://3000';
+const link = ["'",url,"'"].join('')
+console.log(link); // => "'http://3000'"
+```
