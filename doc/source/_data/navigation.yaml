@@ -121,6 +121,11 @@
       "path": "F2E/cookie.html"
     },
     {
+      "text": "Token",
+      "type": "link",
+      "path": "F2E/token.html"
+    },
+    {
       "text": "Operators",
       "type": "link",
       "path": "operators.html"
