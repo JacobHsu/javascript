@@ -121,6 +121,11 @@
       "path": "F2E/cookie.html"
     },
     {
+      "text": "Header",
+      "type": "link",
+      "path": "F2E/header.html"
+    },
+    {
       "text": "Token",
       "type": "link",
       "path": "F2E/token.html"
