@@ -1,5 +1,7 @@
 title: Performance
 ---
+##　Clean Code
+[如何寫出漂亮的 JavaScript 代碼](https://juejin.im/post/5d0e11196fb9a07eee5ed6d2?utm_source=gold_browser_extension)
 
 ## 優化原則和方向
 
