@@ -25,6 +25,11 @@
       "path": "array/array_insert.html"
     },
     {
+      "text": "Object to Array",
+      "type": "link",
+      "path": "array/object_to_array.html"
+    },
+    {
       "text": "Object​",
       "type": "label"
     },
