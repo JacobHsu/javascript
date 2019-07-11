@@ -1,3 +1,18 @@
+# 科學符號處理
+
+npm [from-exponential](https://www.npmjs.com/package/from-exponential)  
+
+```js
+<span v-text="getPriceValue(order.itemPrice)"></span>
+import fromExponential from 'from-exponential'
+methods: {
+    getPriceValue(value) {
+      return fromExponential(value)
+    }
+
+}
+```
+
 # why 0.1 + 0.2 != 0.3
 
 > 0.1 + 0.2 == 0.3
