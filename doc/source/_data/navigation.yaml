@@ -53,6 +53,16 @@
       "path": "cases/str.html"
     },
     {
+      "text": "Case arr",
+      "type": "link",
+      "path": "cases/arr.html"
+    },
+    {
+      "text": "Case if",
+      "type": "link",
+      "path": "cases/if.html"
+    },
+    {
       "text": "Note",
       "type": "label"
     },
