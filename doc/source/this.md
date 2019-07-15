@@ -149,6 +149,16 @@ Note: IIFE、Closure、Callback function 與 this 關係是!? 沒有關係
 
 ## bind, apply, call 
 
+`call & apply` 可以作為呼叫 Function 的另一個手段，皆是回傳function執行結果
+而 `bind` 則會回傳一個經過包裹後的 Function 回來，回傳的是綁定 this 後的*原函數*。
+> 「綁定this的函數」 一但被綁定，其this無法再被修改。
+
+call vs. apply 作用完全一樣，只是接受參數的方式不太一樣
+```js
+func.call(this, arg1, arg2);
+func.apply(this, [arg1, arg2]); //陣列
+```
+
 JavaScript  Call 
 [使用給定的this參數以及分別給定的參數來呼叫某個函數](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call)  
 
