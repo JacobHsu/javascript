@@ -151,6 +151,11 @@
       "path": "F2E/header.html"
     },
     {
+      "text": "Number",
+      "type": "link",
+      "path": "num.html"
+    },
+    {
       "text": "Token",
       "type": "link",
       "path": "F2E/token.html"
