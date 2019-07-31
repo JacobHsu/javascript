@@ -20,6 +20,11 @@
       "path": "array/array_merge.html"
     },
     {
+      "text": "Array Method",
+      "type": "link",
+      "path": "array/array_method.html"
+    },
+    {
       "text": "Array Insert",
       "type": "link",
       "path": "array/array_insert.html"
