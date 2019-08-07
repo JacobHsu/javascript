@@ -55,7 +55,6 @@ console.log( padding4(7,3) ) //"007"
  數字填充9
 
  ```js
-
 function paddingPoint(length) {
     var decimal = 1 / Math.pow(10, length);
     decimal = decimal.toFixed(length) + "";

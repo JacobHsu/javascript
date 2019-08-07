@@ -171,6 +171,11 @@
       "path": "operators.html"
     },
     {
+      "text": "Arrow Function",
+      "type": "link",
+      "path": "arrowFunction.html"
+    },
+    {
       "text": "SWAGGER",
       "type": "label"
     },
