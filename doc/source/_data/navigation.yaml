@@ -53,6 +53,11 @@
       "type": "label"
     },
     {
+      "text": "JS Core",
+      "type": "link",
+      "path": "core.html"
+    },
+    {
       "text": "Case string",
       "type": "link",
       "path": "cases/str.html"
