@@ -1,6 +1,22 @@
 title: Scope
 ---
 
+範圍鏈  
+當函式本身沒有變數會向外層尋找  
+```js
+var value = 1
+function fn1() {
+  console.log(value) //沒有變數 向外尋找 指向全域的變數 value=1 
+  //尋找時與執行環境無關 因為js是語法作用域 撰寫時已確定作用域  
+}
+function fn2() {
+  var value = 2
+  fn1()
+}
+fn2()
+```
+
+
 變數的作用域在函式內  
 全域變數 vs 區域變數：內可用外，外不可用內。
 不能污染全域變數。
