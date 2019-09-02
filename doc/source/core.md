@@ -77,3 +77,14 @@ fn = function () {
 }
 console.log(fn) //2
 ```
+
+# 同步/非同步
+
+JS是單執行序 是同步的  
+可利用 `事件佇列` 實現非同步  同步概念的先跑完 非同步行為先移至事件佇列  
+
+```js
+setTimeout(function(){
+    console.log('someone call')
+},3000) //不管如何調整秒數 都不會優先執行  0也是最後執行  
+```
