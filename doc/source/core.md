@@ -78,6 +78,40 @@ fn = function () {
 console.log(fn) //2
 ```
 
+程式
+```js
+function fn () {  
+    console.log(a)
+}
+var a = 'hello'
+fn()
+```
+
+實際運作拆解
+```js
+//創造階段
+function fn() {  
+    console.log(a)
+}
+var a;
+// 執行階段
+a = 'hello'
+fn () 
+```
+
+```js
+function fn() {
+    if(a) { // undefined 在 JavaScript 代表著 false
+        console.log('hello')
+    } else {
+        console.log('jacob')
+    }
+}
+fn() //因為函式在執行時，變數還沒有被賦予值
+var a = true
+```
+
+
 # 同步/非同步
 
 JS是單執行序 是同步的  
@@ -88,3 +122,12 @@ setTimeout(function(){
     console.log('someone call')
 },3000) //不管如何調整秒數 都不會優先執行  0也是最後執行  
 ```
+
+# LHS  
+`1= true`
+1 = true 會出現 left-hand side (LHS)，實際上在此就無法繼續執行
+`Uncaught ReferenceError: Invalid left-hand side in assignment` 
+
+`console.log(a)`  
+not defined 但其實是 RHS 錯誤，只是 JavaScript 並不會直接顯示 RHS 錯誤
+
