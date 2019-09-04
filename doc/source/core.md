@@ -94,7 +94,7 @@ function fn() {
     console.log(a)
 }
 var a;
-// 執行階段
+//執行階段
 a = 'hello'
 fn () 
 ```
@@ -130,4 +130,24 @@ setTimeout(function(){
 
 `console.log(a)`  
 not defined 但其實是 RHS 錯誤，只是 JavaScript 並不會直接顯示 RHS 錯誤
+
+# 陳述式 表達式  
+
+[陳述式與宣告分類](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements)  
+[運算式與運算子](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators)  
+[正規表達式](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions)  
+
+陳述式 不會回傳結果  
+```js
+// expression
+100 + 100
+// statement
+var foo;
+if(1==1) {}
+
+// 物件實字  
+var a = {
+    name : "Jacob"
+}
+```
 
