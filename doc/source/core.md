@@ -182,3 +182,23 @@ var a = {
 ;(function() { })()
 ;(function() { })()
 ```
+
+# 動態型別
+
+
+```js
+//執行階段才會賦予確立型別
+var myName = 'Jacob'
+var myName; // 先賦予命名空間
+myName = 'Jacob' //執行階段才確認型別
+
+console.log(typeof myName)
+console.log(typeof 'Jacob')
+
+//顯性的轉換 explicit conversion
+//隱性的轉換 implicit conversion
+var num = 1 //number  
+num = num + '' //string  
+num = num * 3 //number  
+console.log(num, typeof num)
+```
