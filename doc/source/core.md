@@ -202,3 +202,13 @@ num = num + '' //string
 num = num * 3 //number  
 console.log(num, typeof num)
 ```
+
+# 原始型別及物件型別
+
+原始型別 可用包裹物件的所有方法  
+```js
+a = 'Jacob'
+var e = new String(a) //但是原始型別盡量不用此方式 建構式 宣告 
+console.log(a, e) 
+console.log(typeof e) // 建構式宣告的非原始型別 是物件型別  
+```
