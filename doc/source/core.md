@@ -212,3 +212,37 @@ var e = new String(a) //但是原始型別盡量不用此方式 建構式 宣告
 console.log(a, e) 
 console.log(typeof e) // 建構式宣告的非原始型別 是物件型別  
 ```
+
+# 運算子
+
+[運算子](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Expressions_and_Operators)  
+[運算子優先序](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)  
+
+賦值的優先性很低只有3 `Assignment`  
+
+`console.log(1<2<3); //true`  
+`console.log(3>2>1); //false`  
+
+`console.log(3>2) // true`  
+`console.log(1>1) // false`  
+
+a = b = 3 // a是收 3賦予至b的 '回傳結果' 
+
+```js
+const b = {};
+Object.defineProperty(b, 'a', {
+    value: 2,
+    writable: false
+})
+
+b.a = 3
+console.log(b.a) //2
+
+var a = 3;  
+a = b.a = 1;  
+console.log(a, b.a) // 1, 2  
+
+// b.a 是表達式 接收 1  b.a = 1 跟 b.a沒有關連性
+
+```
+
