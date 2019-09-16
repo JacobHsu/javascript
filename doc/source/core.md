@@ -246,3 +246,41 @@ console.log(a, b.a) // 1, 2
 
 ```
 
+# 嚴格相等 寬鬆相等  
+```js
+console.log(1) //數字1 藍色
+console.log('1') //字串1  黑色
+
+//嚴格相等 特殊狀況
+console.log(NaN === NaN) //false 
+console.log(+0 === -0) //true
+
+//寬鬆相等
+console.log(1 == '1') // true 布林和字串轉為數值
+console.log(Number('1'))  
+
+console.log(Number('0x11')) //17 0x是指十六進制數  16+1
+console.log(17=='0x11') //true  
+
+//Null Undefined 不會轉數字型別  
+console.log(Number(null)) //0
+console.log(Number(undefined))  //NaM 
+console.log( null == undefined) //true
+console.log( null === undefined) //false  
+
+// 物件與非物件 使用包裹物件轉換 (Number String)
+console.log([10])
+console.log(10 == [10]) // [10] Number([10]) 10
+
+console.log( {A:'A'}) //__proto__: Object  
+console.log( String({A:'A'})) // [object Object]
+
+//物件與物件 比對的不是值 是參考位址
+console.log( {}=={} ) //false  物件的參考位址不同
+console.log( []==[] ) //false 同樣是物件型別  比對的都是參考位址
+
+var a = [] 
+var b = a ;//b取得的是a的參考位址
+console.log( a===b) //a,b使用同個參考位址
+```
+
