@@ -284,3 +284,18 @@ var b = a ;//b取得的是a的參考位址
 console.log( a===b) //a,b使用同個參考位址
 ```
 
+[JavaScript Equality Table](https://dorey.github.io/JavaScript-Equality-Table/)  
+
+# Truthy
+
+[Truthy（真值）](https://developer.mozilla.org/zh-CN/docs/Glossary/Truthy)
+
+`console.log(new Boolean(false)) //Boolean{false} 物件`  __proto__: Object 
+
+```js
+if(new Boolean(false)) {
+    console.log('Truthy')
+} else {
+    console.log('Falsy')
+}
+```
