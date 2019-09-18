@@ -299,3 +299,15 @@ if(new Boolean(false)) {
     console.log('Falsy')
 }
 ```
+
+# 邏輯運算子及函式預設值
+
+```js
+console.log(1 && 2) //2
+console.log(![]) //false
+
+// 預設值為 0 的解決方法 使用三元運算子
+// 當 cash 是數值或為 0 時，使用 cash 的數值
+// 如果 cash 是 NaN 時，則直接套用 500
+cash = (cash || cash === 0)? cash: 500;
+```  
