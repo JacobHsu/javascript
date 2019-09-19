@@ -246,6 +246,44 @@ console.log(a, b.a) // 1, 2
 
 ```
 
+[Operators/Operator_Precedence](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)  
+```js
+var a = 1, b =2, c= 0;  
+console.log(c || c && c || a)  
+// 	Logical AND 6  	  Logical OR 5  從左至右
+console.log(c || 0 && 0 || a)  
+console.log(c || 0 || a)  
+console.log(0 || 0 || a)  
+console.log(0|| a)  
+console.log(0|| 1)  
+console.log(1)  
+```
+
+```js
+var a = 1 + 1 === 1  
+console.log(a = 2 === 1)  
+console.log(false)  
+
+1000 < 10000 < 10
+console.log(true < 10)   
+console.log(1 < 10)   
+console.log(true)   
+```
+
+
+```js
+var a = '1'; var b = 2;
+var c = (a>b) ? a*b : sum(a,b);
+function sum(a, b) {return a+b}
+
+console.log('1'>2) 
+console.log(1>2)  // ture
+sum(a,b)
+console.log('1'+2) //12  string型別相加  
+console.log(c))  
+console.log(12) 
+```
+
 # 嚴格相等 寬鬆相等  
 ```js
 console.log(1) //數字1 藍色
@@ -309,5 +347,5 @@ console.log(![]) //false
 // 預設值為 0 的解決方法 使用三元運算子
 // 當 cash 是數值或為 0 時，使用 cash 的數值
 // 如果 cash 是 NaN 時，則直接套用 500
-cash = (cash || cash === 0)? cash: 500;
+cash = (cash || cash === 0)? cash: 500; // or 左右兩邊放的是表達式
 ```  
