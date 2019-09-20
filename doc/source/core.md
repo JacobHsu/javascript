@@ -183,6 +183,14 @@ var a = {
 ;(function() { })()
 ```
 
+```js
+var a = 1
+(function(){
+    console.log(a);
+})()
+// var a = 1(function(){ console.log(a);})()
+```
+
 # 動態型別
 
 
@@ -212,6 +220,10 @@ var e = new String(a) //但是原始型別盡量不用此方式 建構式 宣告
 console.log(a, e) 
 console.log(typeof e) // 建構式宣告的非原始型別 是物件型別  
 ```
+
+凡是使用 `new` 所建構的型別，在 typeof 都會是 `object`
+透過建構式來建立的物件，`var a = new Object(); if(a)` 一樣是會被判定 true，因為物件的記憶體已經存在了
+
 
 # 運算子
 
@@ -247,6 +259,14 @@ console.log(a, b.a) // 1, 2
 ```
 
 [Operators/Operator_Precedence](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)  
+
+```js
+var a = 10;
+console.log(++a*a) //a + 1   11*11 121
+var a = 10;
+console.log(--a*a) //9*9 81
+```
+
 ```js
 var a = 1, b =2, c= 0;  
 console.log(c || c && c || a)  
@@ -313,7 +333,7 @@ console.log(10 == [10]) // [10] Number([10]) 10
 console.log( {A:'A'}) //__proto__: Object  
 console.log( String({A:'A'})) // [object Object]
 
-//物件與物件 比對的不是值 是參考位址
+//物件與物件 比對的不是值 是參考位址 參考同一個記憶體  
 console.log( {}=={} ) //false  物件的參考位址不同
 console.log( []==[] ) //false 同樣是物件型別  比對的都是參考位址
 
