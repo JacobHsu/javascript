@@ -369,3 +369,39 @@ console.log(![]) //false
 // 如果 cash 是 NaN 時，則直接套用 500
 cash = (cash || cash === 0)? cash: 500; // or 左右兩邊放的是表達式
 ```  
+
+# 物件取值
+
+點 與 中括弧(可用變數方式)
+物件取值屬性用字串
+```js
+const family = {
+    name: 'Hsu',
+    members: {
+        mon: 'mon',
+        dad: 'dad'
+    },
+    others: 'others',
+    1: 10,
+    '$-myFamily': 'my family',
+    callFamily: function() {
+        console.log('call family')
+    }
+} //物件實字
+
+console.log(family.name);
+console.log(family['name']);
+const a = 'name';
+console.log(family[a]);
+
+console.log(family[1]) //OK
+console.log(family.1) //FAIL
+
+family.callFamily();
+family['callFamily']();
+
+//add 
+family['$'] = 'money'  
+delete family.others
+delete family['$']
+```
