@@ -405,3 +405,32 @@ family['$'] = 'money'
 delete family.others
 delete family['$']
 ```
+
+```js
+//變數無法被刪除，屬性才可以
+var a=1;//變數
+b=2; //屬性
+console.log(window)
+delete a;
+delete b; //b is not defind
+console.log(window)
+```
+
+# 純值無法新增屬性
+
+js兩種型別 不是純值 就是物件 (function是物件) 
+```js
+var newStr = 'myname' //純值
+newStr.name = 'Jacob'
+console.log(newStr)
+
+var newStr2 = new String('myname') //建構式 物件
+newStr2.name = 'Jacob'
+console.log(newStr2)
+
+function callFn() {
+    console.log('fun')
+}
+console.log(callFn)
+console.dir(callFn) //看見物件所有屬性內容  
+```
