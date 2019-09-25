@@ -434,3 +434,6 @@ function callFn() {
 console.log(callFn)
 console.dir(callFn) //看見物件所有屬性內容  
 ```
+
+純值 傳值(call by value) 
+物件(陣列 函式)) 傳參考(call by reference)

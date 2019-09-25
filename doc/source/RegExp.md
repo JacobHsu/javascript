@@ -5,6 +5,15 @@ title: 正規表達式 regexp
 [2019年JS正则大全(常用)](https://juejin.im/post/5d245d4151882555300feb77?utm_source=gold_browser_extension)  
 
 
+
+
+[js正则表达式，限1-2位整数，或者至多含有两位小数](https://blog.csdn.net/bestcxx/article/details/60772406)
+
+```js
+//1、只能输入数字或者小数点    仅整数,整数加小数
+var reg1=/(^[0-9]{1,2}$)|(^[0-9]{1,2}[\.]{1}[0-9]{1,2}$)/;
+```
+
 email
 
 ```js
