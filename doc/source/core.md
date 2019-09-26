@@ -415,6 +415,52 @@ delete a;
 delete b; //b is not defind
 console.log(window)
 ```
+## 物件記憶體空間
+
+```js
+var person = {
+    name: 'Jacob'
+}
+var person2 = person
+person2 = 'Hsu' //find 0x01 change name's value
+```
+
+| 參考物件   | Value   |
+| ---------- | --------|
+| 0x01       |         |
+| name       | Jacob   |
+
+| 物件變數   | Value   |
+| ---------- | --------|
+| person     | 0x01    |
+| person2    | 0x01    |
+
+
+```js
+// 見大括號 生成新的參考物件  
+var company = {
+    team: 'dev',
+    member: {
+        rd: 'Jacob'
+        qa: 'Claire'
+    }
+}
+```
+
+| 參考物件   | Value   |
+| ---------- | --------|
+| 0x01       |         |
+| team       | dev     |
+| member     | 0x02    |
+
+| 0x02       |         |
+| rd         | Jacob   |
+| qa         | Claire  |
+
+| 物件變數   | Value   |
+| ---------- | --------|
+| company    | 0x01    |
+
 
 # 純值無法新增屬性
 
@@ -437,3 +483,4 @@ console.dir(callFn) //看見物件所有屬性內容
 
 純值 傳值(call by value) 
 物件(陣列 函式)) 傳參考(call by reference)
+
