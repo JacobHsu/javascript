@@ -1,3 +1,25 @@
+title: 問題
+---
+
+# 浮點數運算的坑
+
+[JavaScript 浮点数陷阱及解法](https://github.com/camsong/blog/issues/9)
+
+當你拿到 1.4000000000000001 這樣的數據要展示時，建議使用 toPrecision 湊整併 parseFloat 轉成數字後再顯示，如下：
+
+`parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // True`
+
+
+百分比 轉 小數 問題
+```js
+var a = 0.9;
+var b = a / 100;
+var c = parseFloat( (a / 100).toPrecision(12)) 
+
+console.log(b) // 0.009000000000000001
+console.log(c) // 0.009
+```
+
 # 科學符號處理
 
 npm [from-exponential](https://www.npmjs.com/package/from-exponential)  
