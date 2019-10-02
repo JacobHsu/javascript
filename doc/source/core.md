@@ -372,6 +372,8 @@ cash = (cash || cash === 0)? cash: 500; // or 左右兩邊放的是表達式
 
 # 物件取值
 
+[求值策略](https://zh.wikipedia.org/wiki/求值策略)  
+
 點 與 中括弧(可用變數方式)
 物件取值屬性用字串
 ```js
@@ -483,4 +485,28 @@ console.dir(callFn) //看見物件所有屬性內容
 
 純值 傳值(call by value) 
 物件(陣列 函式)) 傳參考(call by reference)
+
+# 深淺拷貝
+
+```js
+var family = {
+    name: 'Hsu',
+    member: {
+        father: 'dad',
+        monther: 'mom',
+        other: 'someone'
+    }
+}
+var newFamily = {}
+for(var key in family) {
+    console.log(key, family[key]);
+    newFamily[key] =family[key];
+}
+newFamily.name = 'Chen'
+console.log(family, newFamily)
+newFamily.member.other = 'stranger'
+console.log(family, newFamily) //for in只能做第一層的複製 第二層是傳參考的形式
+//淺層複製  
+
+```
 
