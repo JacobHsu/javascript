@@ -506,7 +506,21 @@ newFamily.name = 'Chen'
 console.log(family, newFamily)
 newFamily.member.other = 'stranger'
 console.log(family, newFamily) //for in只能做第一層的複製 第二層是傳參考的形式
-//淺層複製  
+//淺層複製  js for in, jQuery extend, ES6 assign
 
+
+//jQuery
+var newFamily2 = jQuery.extend({}, family);
+//ES6
+var newFamily3 = Object.assign({}, family)
+
+//深層複製 deep copy 會將原本的物件轉成字串再轉回來 傳參考特性會沒有 
+//console.log(family, JSON.stringify(family))
+console.log(family, JSON.parse( JSON.stringify(family) )) 
+var newFamily4 = JSON.parse( JSON.stringify(family) );
+console.log(family === newFamily4)
+newFamily4.name = 'Liao'
+newFamily4.member.other = 'Deep'
+console.log(family, newFamily4) //兩者完全無關  參考也都不一樣  
 ```
 
