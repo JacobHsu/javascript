@@ -524,3 +524,24 @@ newFamily4.member.other = 'Deep'
 console.log(family, newFamily4) //兩者完全無關  參考也都不一樣  
 ```
 
+# 陣列
+
+陣列是物件型別的一種  
+
+```js
+var newArray = [
+    1,
+    'Str',
+    true,
+    {
+        name:'Jacob'
+    }
+];
+console.log(newArray[3]); //[object Object] { name: "Jacob"}
+console.log(newArray.3); //"error"
+newArray.push(5);
+newArray.name = 'Hsu'; //物件可隨意增加屬性 
+newArray[5] ='Chen';
+newArray[7] ='Liao'; //陣列6 empty 取值undefined
+console.log(newArray); //name不屬於陣列裡面的長度
+```
