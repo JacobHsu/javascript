@@ -388,6 +388,9 @@ const family = {
     '$-myFamily': 'my family',
     callFamily: function() {
         console.log('call family')
+    },
+    'Hello': function() {
+        console.log('I am groot ')
     }
 } //物件實字
 
@@ -406,6 +409,14 @@ family['callFamily']();
 family['$'] = 'money'  
 delete family.others
 delete family['$']
+
+
+//利用陣列及for迴圈 執行物件的函式
+var familyMethod = ['callFamily','Hello']
+for(var i=0; i< familyMethod.length;i++) {
+    console.log(familyMethod[i])
+    family[familyMethod[i]]();
+}
 ```
 
 ```js
@@ -544,4 +555,31 @@ newArray.name = 'Hsu'; //物件可隨意增加屬性
 newArray[5] ='Chen';
 newArray[7] ='Liao'; //陣列6 empty 取值undefined
 console.log(newArray); //name不屬於陣列裡面的長度
+
+for(var i=0;i<newArray.length;i++) {
+    console.log(newArray[i])
+}
 ```
+
+# JSON
+
+[JSON - 維基百科](https://zh.wikipedia.org/wiki/JSON)  
+儘管JSON是JavaScript的一個子集，但JSON是獨立於語言的文字格式  
+
+JSON所有的屬性一定都是字串的形式  
+物件可以用單引號`'` 但JSON一律用雙引號`"`  
+
+原生AJAX讀JSON
+```js
+//原生AJAX
+function getData() {
+    console.log(this.response)
+    var data = JSON.parse(this.response);
+    console.log(data);
+}
+var oReq = new XMLHttpRequest();
+oReq.addEventListener("load", getData);
+oReq.open("GET","family.json") //傳入的字串
+oReq.send();
+```
+透過開發工具Network可以看結果  
