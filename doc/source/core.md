@@ -569,6 +569,12 @@ for(var i=0;i<newArray.length;i++) {
 JSON所有的屬性一定都是字串的形式  
 物件可以用單引號`'` 但JSON一律用雙引號`"`  
 
+SON 的格式是非常嚴格的，多一個逗號少一個逗號，都會導致出現錯誤，
+所以最後一筆不可多了一個逗號
+
+透過 `JSON.parse()` 出來的資料是一個物件，所以物件會有傳參考特性
+後續的值變更，原本的值也會變更  
+
 原生AJAX讀JSON
 ```js
 //原生AJAX
@@ -583,3 +589,10 @@ oReq.open("GET","family.json") //傳入的字串
 oReq.send();
 ```
 透過開發工具Network可以看結果  
+
+
+# function 
+
+在 JavaScript 中 function 是一個很特別的存在，它是可以當成物件來使用，
+function 也是物件的一種，只是它是擁有程式區塊的能力物件而已
+透過 「.」 即可做到新增屬性與值，所以function 在 JavaScript 是一個特殊的物件
