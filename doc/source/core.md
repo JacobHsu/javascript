@@ -596,3 +596,44 @@ oReq.send();
 在 JavaScript 中 function 是一個很特別的存在，它是可以當成物件來使用，
 function 也是物件的一種，只是它是擁有程式區塊的能力物件而已
 透過 「.」 即可做到新增屬性與值，所以function 在 JavaScript 是一個特殊的物件
+
+```js
+function statementFn() {
+    console.log('函式陳述式', '具名函式');
+    console.log(statementFn);
+}
+statementFn();
+
+var expressionFn = function() {
+    console.log('函式表達式','匿名函式'); //不是所有匿名函式 都是函式表達式
+    console.log(expressionFn);
+}
+expressionFn()
+
+var functionC = function functionD() {
+    console.log(functionC, functionD)
+    //具名函式能夠在函式內被調用
+}
+console.log(functionC)
+console.log(functionC, functionD) //functoinD is not defind
+
+var num = 1
+var giveMeMoney = function giveMoreMoney(coin) {
+    num += 1
+    console.log('Exec giveMeMoney',num,coin)
+    return coin>100 ? coin : giveMoreMoney(num * coin)
+};
+console.log(giveMeMoney(30)) //加錢到超過100元才停止
+```
+
+```JS
+function callSomeFn(fn) {
+    fn();
+}
+// 函數陳述式沒有名稱無法執行
+// function (fn) {
+//     fn();
+// }
+// 傳入的參數函式 如同函式表達式  不需要名稱
+callSomeFn(function(){ console.log('執行函式') }) // 2定義一段函式並賦予到參數上
+```
