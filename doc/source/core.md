@@ -637,3 +637,66 @@ function callSomeFn(fn) {
 // 傳入的參數函式 如同函式表達式  不需要名稱
 callSomeFn(function(){ console.log('執行函式') }) // 2定義一段函式並賦予到參數上
 ```
+
+# 立即函式(IIFE)
+
+[立即呼叫函式表達式](https://zh.wikipedia.org/wiki/立即调用函数表达式)（英文：immediately-invoked function expression，縮寫：IIFE）
+
+```js
+function fnA() {
+    console.log('IIFE')
+}
+fnA();
+
+// IIFE
+(function IIFE() {
+    console.log('立即函式', 'IIFE', '沒有fnA也可以執行','這裡是具名函式')
+    // 1. 立即執行
+    // 2. 無法再函式外被再次執行  
+}());  //括號內層再補上小括號 
+
+(function IIFE() {
+})();  //小括號可以移到外層    
+console.log(IIFE); //IIFE is not defined
+
+(function() {
+    console.log('立即函式', 'IIFE', '沒有fnA也可以執行')
+    // 1. 立即執行
+    // 2. 無法再函式外被再次執行  
+}());
+
+
+(function() {
+    var name = 'Jacob';
+    console.log(name)
+    // 限制變數的作用域
+})(); 
+
+
+var whereParameter = (function(parameter) {
+    console.log(parameter)
+    return parameter;
+})('參數在這'); 
+console.log(whereParameter);
+
+//記得養成好習慣 在立即函式前或後加分號
+
+// 立即函式 傳遞變數
+var a = {};
+(function(b){
+    b.person = 'jacob';
+})(a)
+;(function(c){
+    console.log(c.person); //把另一個立即函式定義的變數印出來
+})(a)
+
+// 大型框架下 用全域物件傳值
+(function(global){
+    global.person = 'jacob';
+})(window)
+;(function(){
+    console.log(person); //把另一個立即函式定義的變數印出來
+})()
+
+```
+
