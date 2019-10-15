@@ -35,6 +35,11 @@
       "path": "array/object_to_array.html"
     },
     {
+      "text": "Good Part",
+      "type": "link",
+      "path": "array/good_part.html"
+    },
+    {
       "text": "Object​",
       "type": "label"
     },
