@@ -700,3 +700,31 @@ var a = {};
 
 ```
 
+# 參數
+
+```js
+// callback function
+function cbFn(name, a) {
+    console.log(name+'你好'+a)
+}
+function funcB(fn) {
+    fn('Jacob', 1) //實際執行在這
+}
+funcB(cbFn) //"Jacob你好1"
+```
+
+```js
+function callArg(a) {
+    console.log(a, arguments); //arguments 是一個類陣列 不是純陣列
+    for(let index = 0; index < arguments.length; index++) {
+        console.log(arguments[index]); // 1 2 3 '4' 
+    }
+
+    // 類陣列並沒有絕大多數陣列可使用的方法  
+    // "TypeError: arguments.forEach is not a function
+    arguments.forEach(function(){
+
+    })
+}
+callArg(1, 2, 3, '4') //1, [object Arguments] { 0: 1, 1: 2, 2: 3, 3: "4"}
+```
