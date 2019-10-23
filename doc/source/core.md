@@ -728,3 +728,19 @@ function callArg(a) {
 }
 callArg(1, 2, 3, '4') //1, [object Arguments] { 0: 1, 1: 2, 2: 3, 3: "4"}
 ```
+
+# 閉包 Closure
+
+```js
+function storeMoney() {
+   var money = 1000;
+   return function(price) {
+      money = money + price
+      return money
+   }
+}
+//console.log( storeMoney()(100) ) // 1100
+var mingMoney = storeMoney()
+console.log(mingMoney) //function(price) {
+console.log(mingMoney(100))
+```
