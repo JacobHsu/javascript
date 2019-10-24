@@ -744,3 +744,98 @@ var mingMoney = storeMoney()
 console.log(mingMoney) //function(price) {
 console.log(mingMoney(100))
 ```
+
+
+```js
+function arrFunc() {
+    var arr = [];
+    for(var i=0;i<3;i++) {
+        arr.push(function(){
+            console.log(i);
+        });
+    }
+    console.log('i', i) // 3 3 3 
+    return arr;
+} 
+var fn = arrFunc();
+fn[0]();
+fn[1]();
+fn[2]();
+```
+
+透過 立即函式  
+```js 
+function arrFunc() {
+    var arr = [];
+    for(var i=0;i<3;i++) {
+        // 立即函式一個功能 限制作用域  
+        (function(j){
+            arr.push(function(){
+                console.log(j);
+            });
+        })(i);
+    }
+    console.log('i', i) // 0 1 2 
+    return arr;
+} 
+var fn = arrFunc();
+fn[0]();
+fn[1]();
+fn[2]();
+```
+
+透過 let   
+```js
+function arrFunc() {
+    var arr = [];
+    for(let i=0;i<3;i++) {
+        arr.push(function(){
+            console.log(i); // 0 1 2 
+        });
+    }
+    //console.log('i', i) // "error" let作用域只在for
+    return arr;
+} 
+var fn = arrFunc();
+fn[0]();
+fn[1]();
+fn[2]();
+```
+
+## 函式工廠  
+給不同的值　做相同的事情
+```js
+function storeMoney(initVal) {
+    var money = initVal || 1000
+    return function(price) {
+        money = money + price;
+        return money;
+    }
+}
+var MingMoney = storeMoney(100);
+console.log(MingMoney(500)) // 600
+```
+
+
+```js
+function storeMoney(initVal) {
+    var money = initVal || 1000
+    // 私有方法 可以做很多不同事情
+    return {
+        increase: function(price) {
+            money += price
+        },
+        decrease: function(price) {
+            money -= price
+        },
+        value: function() {
+            return money;
+        }
+    }
+}
+var MingMoney = storeMoney(100);
+MingMoney.increase(100);
+MingMoney.increase(25);
+MingMoney.decrease(25);
+console.log(MingMoney.value()) // 200
+```
