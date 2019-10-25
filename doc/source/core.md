@@ -839,3 +839,17 @@ MingMoney.increase(25);
 MingMoney.decrease(25);
 console.log(MingMoney.value()) // 200
 ```
+
+## this
+
+chrome / devTool / Sources / || 暫停按鈕 / 進入執行堆疊  
+
+`this` 為關鍵字 在每個執行環境存在  
+
+this 的調用方式
+作為物件方法  關注在哪個物件下呼叫  `Object.fn()` this 指向 Object
+簡易呼叫  (不建議調用this)
+bind, apply, call 方法  
+new  
+DOM事件處理器  
+箭頭函式(ES6)  
