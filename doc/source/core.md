@@ -853,3 +853,55 @@ bind, apply, call 方法
 new  
 DOM事件處理器  
 箭頭函式(ES6)  
+
+### simple call 簡易呼叫 
+
+```js
+var myName = 'Jacob';
+function callName() {
+    console.log(this, this.myName)
+}
+callName() // this -> window
+// 盡可能不要使用simple call的this
+```
+
+```js
+(function(){
+    console.log(this.myName);
+    function callFn() {
+        console.log(this.myName);
+    }
+    callFn(); //simple call 看到函式是直接執行的 就是簡易呼叫 執行閉包內函式也是
+})();
+```
+
+```js
+// callback
+function myCb(callback) {
+    var money = 100
+    return callback(money)
+}
+myCb(function(money) {
+   console.log(this.myName, money+100)
+})
+```
+
+```js
+var a = [1, 2, 3]
+// forEach 後方是插入一個callback函式
+a.forEach(function(i){
+    console.log(this.myName, i);
+})
+
+var family = {
+    myName: 'Hsu',
+    callName: function() {
+        // var self = this; // vm , that 
+        setTimeout(function(){
+            console.log(this.myName) // simple call this->window 'Jacob' 無法取得物件的myName 'Hsu'
+            console.log(self.myName) // 物件的myName 'Hsu'
+        }, 1000)
+    }
+    family.callName();
+}
+```
