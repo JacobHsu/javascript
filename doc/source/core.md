@@ -905,3 +905,56 @@ var family = {
     family.callName();
 }
 ```
+
+### Call, appply, bind
+
+```js
+var team = {
+    myName: 'Jacob'
+}
+function fn(para1, para2) {
+    console.log(this, para1, para2)
+}
+fn(1, 2); //simple call
+fn.call(team, 1, 2); // call 是立刻執行
+fn.apply(team, [3,4]); // apply 是立刻執行  差別在以陣列方式呈現
+
+var fn2 = fn.bind(team, 5, 6); // bind 非立刻執行  
+fn2(6); // [object Object] 5 6 順序執行參數所以是6  
+fn2(1, 2); // [object Object] 5 1 順序執行參數所以是1  
+```
+
+```js
+function fn(para1, para2) {
+    console.log(this, para1, para2)
+}
+// 進階概念
+fn.call(1, 'Jacob', 'Jessica') //傳純值 Number{1} 'Jacob', 'Jessica' 已建構式方式呈現 物件的型別
+
+fn.call('Str', 'Jacob', 'Jessica')
+fn.call(undefined, 'Jacob', 'Jessica') // null 、undefined 將會被置換成全域變數 [object Window] 'Jacob', 'Jessica'
+```
+
+[MDN call()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Function/call)  
+
+
+### 嚴格模式
+
+```js
+(function(){
+    'use strict';
+    name = 'Jacob';  // "error" name is not defined
+})()
+```
+
+```js
+function fn(para1, para2) {
+    'use strict'; // 有加入嚴格模式 this所指向的window會變undefined
+    console.log(this, para1, para2) // 1 "Jacob" "Jessica"  嚴格模式下 純值維持原型別 不以建構式方式呈現
+}
+fn.call(1, 'Jacob', 'Jessica') 
+fn.call(undefined, 'Jacob', 'Jessica') // undefined "Jacob" "Jessica"
+// 簡易呼叫下 盡可能不要調用this 因為它本質就是undefined
+```
+
+
