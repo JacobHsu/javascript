@@ -957,4 +957,13 @@ fn.call(undefined, 'Jacob', 'Jessica') // undefined "Jacob" "Jessica"
 // 簡易呼叫下 盡可能不要調用this 因為它本質就是undefined
 ```
 
+### this: DOM
+
+```html
+<button onclick="console.log(this)">this is btn</button>
+<button onclick="console.dir(this)">this is btn</button>
+```
+
+[console.dir(object)](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/dir)  
+
 

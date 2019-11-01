@@ -42,6 +42,19 @@ var callName = obj.callName;
 callName();  // "全域"
 ```
 
+
+```js
+var name = '全域'
+var obj = {
+  //name : '物件的',
+  x: function() {
+    name = '函式的';
+    console.log(this.name); //"物件的"  找不到就會undefined
+  }
+}
+obj.x()
+```
+
 ## 立即函式：
 
 ```js
@@ -172,7 +185,7 @@ var obj = {
   name: '區域',
 }
 callName(undefined, '全域2'); // "全域" undefined (this.name, name)
-callName.call(undefined, '呼叫'); // "全域" "呼叫" (this.name, name)
+callName.call(undefined, '呼叫'); // "全域" "呼叫" (this.name, name) 無值傳入this往上找
 callName.call(obj, '呼叫'); // "區域" "呼叫" (this.name, name)
 ```
 
