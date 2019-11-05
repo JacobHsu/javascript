@@ -24,3 +24,12 @@ console.log(truthyValues); // [15, 23, 32]
 
 console.log(falseyValues); // [2, 8, 1] 
 ```
+
+## 如何快速將一個字符串數組轉化為數字類型的數組
+
+```js
+['1', '2', '3'].map(parseFloat)
+['1', '2', '3'].map(Number)
+```
+
+[['1', '2', '3'].map(parseInt)的輸出結果是什麼？](https://juejin.im/post/5dbff8735188252ddb2fd25e?utm_source=gold_browser_extension)  
