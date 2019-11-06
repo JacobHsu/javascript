@@ -55,6 +55,48 @@ var obj = {
 obj.x()
 ```
 
+## 簡易呼叫
+
+```js
+var name = '全域'
+var obj = {
+  name : '物件的',
+  getName: function() {
+    return this.name;
+  }
+}
+var getName = obj.getName;
+console.log(getName()) //"全域"
+```
+
+```js
+var name = '全域'
+var obj = {
+  name : '物件的',
+  fn: function(a, b, c) {
+    return this.name+','+a+','+b+','+c;
+  }
+}
+var fnA = obj.fn;
+var fnB = fnA.bind(null, 0); // a
+console.log( fnB(1, 2) ) // b c   "全域,0,1,2"
+```
+
+```js
+var name = '全域'
+var obj = {
+  name : '物件的',
+  fn: function(a, b, c) {
+    'use strict'
+    return this+','+a+','+b+','+c;
+  }
+}
+var fnA = obj.fn;
+var fnB = fnA.bind(null, 0); // a
+console.log( fnB(1, 2) ) // b c   "null,0,1,2"
+```
+
+
 ## 立即函式：
 
 ```js
