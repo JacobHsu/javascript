@@ -96,6 +96,21 @@ var fnB = fnA.bind(null, 0); // a
 console.log( fnB(1, 2) ) // b c   "null,0,1,2"
 ```
 
+```js
+var value = 'global';
+var foo = {
+  value: 'local',
+  bar: function() {
+    return this.value;
+  }
+}
+console.log(foo.bar()); // "local"
+// 下面是表達式 執行時直接把函數取出來 執行函式的結果
+console.log( foo.bar = foo.bar ); // function() {return this.value;}
+// 賦值是表達式 表達式會回傳結果  
+console.log( (foo.bar = foo.bar)() ); // "global" 
+console.log( (false || foo.bar)() ) // "global"
+```
 
 ## 立即函式：
 
@@ -287,6 +302,23 @@ obj.callNameArrow();
 `const func = (x) => x + 1`   
 `const func = function (x) { return x + 1 }`
 JS語言中函式的設計，必有回傳值，沒寫相當於回傳`undefined`    
+
+### map
+
+```js
+// ['1','2','3'] 字串透過parseInt 轉數字
+var arr = ['1','2','3'].map(parseInt);
+console.log(arr) // [1, NaN, NaN]
+
+var arr = ['1','2','3'].map(function(item, i){
+  console.log(item, i) // parseInt('1', 0);  parseInt('2', 1);  parseInt('3', 2);
+  // parseInt('2', 1) 進位系統的1 表數字到1 進到下一位 所以2不會存在NaN  
+  // parseInt('11', 2) 進位系統的2 11表示2+1=3
+  return parseInt(item, 10) // "1" "2" "3"  parseInt(item, i)
+});
+```
+[map()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/map)   callback 回呼函式  參數 currentValue index array  
+[parseInt()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/parseInt) radix 能代表該進位系統的數字  注意，通常預設值不是 10 進位
 
 #### References
 
