@@ -112,6 +112,30 @@ console.log( (foo.bar = foo.bar)() ); // "global"
 console.log( (false || foo.bar)() ) // "global"
 ```
 
+```js
+var value = 'global';
+var obj = {
+  x: function() {
+    value: 'fn',
+    console.log(this.value); //undefined
+  },
+}
+obj.x(); // "local"
+```
+
+```js
+var value = 'global';
+var obj = {
+  
+  x: function() {
+    value: 'fn',
+    console.log(this.value);
+  },
+  value: 'local',
+}
+obj.x(); // "local"
+```
+
 ## 立即函式：
 
 ```js
