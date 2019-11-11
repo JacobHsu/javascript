@@ -561,6 +561,36 @@ for(var i=0;i<newArray.length;i++) {
 }
 ```
 
+```js
+var a = [1, 2, 3];
+console.log(a, a[1], a.length)
+
+//forEach 不是實體屬性 是陣列原型的屬性  
+a.forEach(function(i){
+    console.log(i)
+});
+
+(3) [1, 2, 3]
+0: 1
+1: 2
+2: 3
+length: 3  // length 也是一個物件的屬性  
+__proto__: Array(0) //陣列的原型  可以透過點運算子不斷向上查找取得方法 例:forEach
+    ...
+    __proto__: Object //  陣列的原型 繼承物件的原型  所以陣列也可以使用物件原型的方法  例:toString   
+```
+
+```js
+var a = [1, 2, 3];
+
+var b = [4 ,5 ,6];
+//新增方法到原型鏈上
+a.__proto__.getLast = function() {
+    return this[this.length-1]; //b[b.length-1]
+}
+console.log(a, b, a.getLast(), a.toString())
+```
+
 # JSON
 
 [JSON - 維基百科](https://zh.wikipedia.org/wiki/JSON)  
