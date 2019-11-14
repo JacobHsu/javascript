@@ -996,4 +996,26 @@ fn.call(undefined, 'Jacob', 'Jessica') // undefined "Jacob" "Jessica"
 
 [console.dir(object)](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/dir)  
 
+# new
+
+```js
+function Dog(name, color, size) {
+    this.name = name;
+    this.color = color;
+    this.size = size;
+}
+var Bibi = new Dog('比比', '棕色', '小')
+console.log(Bibi)  
+
+//函式本身就是一個物件 函式物件有一個特別的屬性 prototype  
+//透過prototype所新增的屬性 就會做原型上的方法  函式物件特有的屬性
+Dog.prototype.bark = function () {
+    console.log(this.name, 'barking')
+}
+// __proto__ 物件上  
+// prototype 函式上  
+// 調整原型的方法時 最好的方式是從函式本身的原型屬性上去調整
+console.log(Dog.prototype === Bibi.__proto__) // true  
+```
+
 
