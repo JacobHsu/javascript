@@ -1018,4 +1018,33 @@ Dog.prototype.bark = function () {
 console.log(Dog.prototype === Bibi.__proto__) // true  
 ```
 
+```js
+var b = new String('bcde');
+console.log(b)
+console.dir(String)
+String.prototype.lastText = function() {
+    return this[this.length - 1];
+}
+console.log(b.lastText());
+
+Number.prototype.secondPower = function() {
+    return this * this;
+}
+var num = 5;
+console.log(num.secondPower());
+
+var date = new Date();
+console.log(date);
+console.dir(Date);
+Date.prototype.getFullDate = function() {
+    var dd = String(this.getDate());
+    var mm = String(this.getMonth()+1);
+    var yyyy = this.getFullYear();
+
+    var today = yyyy + '/' + mm + '/' +dd;
+    return today;
+}
+console.log(date.getFullDate());
+```
+
 
