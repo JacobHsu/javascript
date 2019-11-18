@@ -1047,4 +1047,53 @@ Date.prototype.getFullDate = function() {
 console.log(date.getFullDate());
 ```
 
+## 繼承
+
+[Object.create()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+```js
+var a = []
+//Object > Array > a (實體)
+
+//原型鏈上新增一個層級  
+//Object > Animal > Dog > 實體
+//Object > Animal > Cat > 實體
+
+// Object.create() 可以把其他物件作為原型使用
+
+var dog = {
+    name: '狗',
+    bark: function() {
+        console.log(this.name + ' barking')
+    }
+} 
+var Corgi = Object.create(dog); //Corgi 把 dog 作為原型使用  
+Corgi.name = 'Welsh Corgi' 
+console.log(Corgi)
+```
+
+```js
+function Animal(family) {
+    this.kingdom = '動物界'
+    this.family = family || '貓科'
+}
+Animal.prototype.move = function() {
+    console.log(this.name + ' can move') 
+}
+function Dog(name, size) {
+    Animal.call(this, '犬科')
+    this.name = name;
+    this.size = size || 'small'
+}
+Dog.prototype = Object.create(Animal.prototype)
+Dog.prototype.constructor = Dog; // 狗的原型原本直接繼承於動物界的原型 constructor 會被覆蓋所以補回原本建構函式
+Dog.prototype.bark = function() {
+    console.log(this.name + ' barking')
+}
+
+var Chihuahua = new Dog('Chihuahua','small');
+console.log(Chihuahua)  
+Chihuahua.bark();
+Chihuahua.move();
+Chihuahua.family // undefined  目前只有繼承原型prototype 但無繼承動物界的建構函式 Animal.call
+```
 
