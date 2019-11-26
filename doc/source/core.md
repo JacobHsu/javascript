@@ -1097,3 +1097,37 @@ Chihuahua.move();
 Chihuahua.family // undefined  目前只有繼承原型prototype 但無繼承動物界的建構函式 Animal.call
 ```
 
+如果瀏覽器不支援 `Object.create()`
+這時候我們會寫一些程式來填補某些瀏覽器不支援的情況，我們把這些程式稱做 `polyfill`
+
+## 屬性特徵
+
+```js
+const obj = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+console.log(obj)
+//Object.defineProperty()
+// 屬性，調整屬性的特徵
+// 1. 值  2. 可否寫入 3. 可否被刪除  4. 可否被列舉
+//Object.defineProperty(物件, 屬性, 參數)
+
+// being explicit
+Object.defineProperty(obj, 'a', {
+  enumerable: true,
+  configurable: true,
+  writable: false,
+  value: 4
+});
+console.log(obj)
+
+// "TypeError: Cannot assign to read only property 'a' of object '#<Object>'
+(function() {
+    'use strict';
+    obj.a = 5;
+}())
+```
+
+[Object.defineProperty()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 
