@@ -1131,3 +1131,9 @@ console.log(obj)
 ```
 
 [Object.defineProperty()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 
+
+// 延伸的三種物件方法 preventExtensions seal  Freeze 防止擴充 封裝 凍結 直接操作物件本身
+
+[Object.preventExtensions()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)  
+[Object.seal()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/seal)  無法新增刪除 也無法配置特徵 但是可以調整屬性值  
+[Object.freeze()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)  物件加上seal 且無法調整值
