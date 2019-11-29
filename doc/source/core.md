@@ -1137,3 +1137,58 @@ console.log(obj)
 [Object.preventExtensions()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/preventExtensions)  
 [Object.seal()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/seal)  無法新增刪除 也無法配置特徵 但是可以調整屬性值  
 [Object.freeze()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)  物件加上seal 且無法調整值
+
+### Setter And Getter
+
+```js
+var wallet = {
+    total: 100,
+    set save(price) {
+        this.total = this.total + price / 2
+    },
+    get save() {
+        return this.total / 2
+    }
+}
+// Getter 取得特定值的方法
+// Setter 存值的方法
+// wallet.total = 300;
+wallet.save = 300; //透過Setter改變total的值
+console.log(wallet.save) //250 / 2  = 125
+```
+
+[Object.defineProperty()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+[Object.getOwnPropertyDescriptor()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)  
+
+```js
+var wallet = {
+    total: 100
+}
+Object.defineProperty(wallet, 'save', {
+  configurable: true,
+  set: function(price) {
+    this.total = this.total + price / 2
+  },
+  get: function() {
+    return this.total / 2
+  }
+});
+
+wallet.save = 300; //透過Setter改變total的值
+console.log(wallet); //  save  250 / 2  = 125
+console.log(Object.getOwnPropertyDescriptor(wallet, 'save'))
+// [object Object] {
+//  configurable: false,
+//  enumerable: false,
+```
+
+```js
+// 取得陣列最後一個值
+var a = [1, 2, 3];
+Object.defineProperty(Array.prototype, 'lastest', {
+    get: function() {
+        return this[this.length - 1];
+    }
+});
+console.log(a.lastest); //3
+```
