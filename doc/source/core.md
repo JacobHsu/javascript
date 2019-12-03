@@ -1192,3 +1192,26 @@ Object.defineProperty(Array.prototype, 'lastest', {
 });
 console.log(a.lastest); //3
 ```
+
+##　vue
+
+https://github.com/vuejs/vue/blob/dev/dist/vue.js  
+`var emptyObject = Object.freeze({});` 確保空物件
+
+```js
+var app = new Vue({ //建構初始化
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+console.log(app) 
+```
+[深入响应式原理](https://cn.vuejs.org/v2/guide/reactivity.html)  
+
+当你把一个普通的 JavaScript 对象传入 Vue 实例作为 `data` 选项，Vue 将遍历此对象所有的属性，并使用 `Object.defineProperty` 把这些属性全部转为 `getter/setter`。Object.defineProperty 是 ES5 中一个无法 shim 的特性，这也就是 Vue 不支持 IE8 以及更低版本浏览器的原因。
+
+[Vue 理解之白话 getter/setter](https://juejin.im/post/5cb51871f265da0368145069)  
+https://github.com/vuejs/vue/blob/dev/dist/vue.js 
+proxySetter  reactiveSetter  `app.obj === app._data.obj` 
