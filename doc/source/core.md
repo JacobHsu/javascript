@@ -1215,3 +1215,25 @@ console.log(app)
 [Vue 理解之白话 getter/setter](https://juejin.im/post/5cb51871f265da0368145069)  
 https://github.com/vuejs/vue/blob/dev/dist/vue.js 
 proxySetter  reactiveSetter  `app.obj === app._data.obj` 
+Vue 响应式核心就是，getter 的时候会收集依赖，setter 的时候会触发依赖更新
+
+## Let 
+
+var的作用域在函數(function) 裡  
+let的作用域則是在區塊(block) 裡
+
+```js
+for(var i=0;i<10;i++) {
+    console.log(i)
+}
+console.log(i) //window.i 全域 汙染整個作用域
+```
+
+```js
+let name = 'Jacob'
+
+{
+    let name = 'Hsu'
+}
+console.log(name) //Jacob
+```
