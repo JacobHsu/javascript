@@ -1237,3 +1237,43 @@ let name = 'Jacob'
 }
 console.log(name) //Jacob
 ```
+
+## const 
+
+利用 const 可以做到除了被凍結 還能不被賦值
+
+```js
+const person = {
+    name: '黨工',
+    money: 500
+}
+person.name = '網軍'
+Object.freeze(person);
+person.money = 1000;
+
+person = {};
+
+// devTool console
+person // var {}
+person // const
+```
+
+let TDZ
+
+```js
+let arg = 'first';
+
+{
+    //創造
+    let arg; // 暫時性死區 TDZ 有hoisting但鎖住
+
+    //執行
+    console.log(arg);// first
+    let arg = 'second'
+}
+```
+
+1 let 一樣有創造階段
+2 但從創造到實際宣告的階段會出現TDZ 這個區域無法呼叫變數
+3 有創造到執行的概念，但不會預先出現
+(文件不會表明這與 var 的Hoisting相同概念)
