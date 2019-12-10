@@ -1277,3 +1277,17 @@ let arg = 'first';
 2 但從創造到實際宣告的階段會出現TDZ 這個區域無法呼叫變數
 3 有創造到執行的概念，但不會預先出現
 (文件不會表明這與 var 的Hoisting相同概念)
+
+## ES6 Airbnb
+
+Airbnb 規範文件 (ES6 版本)：
+https://github.com/airbnb/javascript
+
+ESLint 安裝教學：
+https://www.youtube.com/watch?v=WiommcFaYvY
+
+? How would you like to use ESLint? (Use arrow keys)
+  To check syntax only 
+  To check syntax and find problems 
+❯ To check syntax, find problems, and enforce code style
+如果要使用 Airbnb 的規範，請選擇最後一個選項。
