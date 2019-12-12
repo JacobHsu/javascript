@@ -1291,3 +1291,40 @@ https://www.youtube.com/watch?v=WiommcFaYvY
   To check syntax and find problems 
 ❯ To check syntax, find problems, and enforce code style
 如果要使用 Airbnb 的規範，請選擇最後一個選項。
+
+
+## 箭頭函數
+
+//沒有傳統函數 arguments 參數
+```js
+const nums = function() {
+    console.log(arguments);
+}
+nums(10, 50, 100, 50, 5, 1);
+```
+
+```js
+const nums = () => {
+    console.log(arguments); //Uncaught ReferenceError
+}
+nums(10, 50, 100, 50, 5, 1);
+```
+
+```js
+const nums = (...arg) => {
+    console.log(arg); //Uncaught ReferenceError
+}
+nums(10, 50, 100, 50, 5, 1);
+```
+
+箭頭函式沒有自己的this 他的this指向外層
+
+```js
+const ele = document.querySelector('p');
+ele.addEventListener('click', function(){
+    console.log(this)
+});
+ele.addEventListener('click', () =>{
+    console.log(this) //指到不一樣的位置 window 全域
+});
+```
