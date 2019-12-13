@@ -1328,3 +1328,36 @@ ele.addEventListener('click', () =>{
     console.log(this) //指到不一樣的位置 window 全域
 });
 ```
+
+### 箭頭函數 常見錯誤
+
+不能直接回傳物件實字
+```js
+const arrFn = () => {data:1}
+console.log(arrFn()) //undefined
+const arrFnr = () => ({data:1})
+console.log(arrFnr()) //{data: 1}
+```
+
+搭配判斷式不能直接接箭頭函式
+
+```js
+let num = 0
+const numFn = num || () => 1;
+console.log(numFn)
+const numFunction = num || (() => 1);
+console.log(numFunction) // 加括號修正
+```
+
+物件裡面搭配箭頭函樹會出錯 指向是不同的
+
+```js
+const app = new Vue({
+    data: {
+        num: 1 
+    },
+    created: () =>{
+        console.log(this.num) //FAIL
+    }
+})
+```
