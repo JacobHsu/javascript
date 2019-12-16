@@ -1361,3 +1361,25 @@ const app = new Vue({
     }
 })
 ```
+
+平均數
+
+```js
+const average = function() {
+    // arguments 是類陣列沒有陣列方法 用Array.from轉成純陣列
+    const nums = Array.from(arguments);
+    const total = nums.reduce(function(acc, val){
+        return acc + val
+    }, 0); // 0 是第一次執行的前一個值
+    console.log(total);
+    return total / nums.length;
+}
+console.log(average(1,2,3,4,5)) // 15  3
+```
+[Array.from()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+[Array.reduce()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+
+```js
+const average = (...nums) => nums.reduce( (acc, val ) => acc + val, 0) / nums.length
+console.log(average(1,2,3,4,5)) // 3
+```
