@@ -33,3 +33,10 @@ console.log(falseyValues); // [2, 8, 1]
 ```
 
 [['1', '2', '3'].map(parseInt)的輸出結果是什麼？](https://juejin.im/post/5dbff8735188252ddb2fd25e?utm_source=gold_browser_extension)  
+
+```js
+['1', '2', '3'].map(parseInt)
+parseInt('1', 0); // 用10進制轉換
+parseInt('2', 1); // 該參數小於 2 或者大於 36，則 parseInt() 將返回 NaN
+parseInt('3', 2); // 這個字符串的第一個字符是“3”，它並不是基礎基數2的一個有效數字。所以這個子字符串將被解析為空。如果子字符串被解析成空了，函數將返回為NaN。
+```

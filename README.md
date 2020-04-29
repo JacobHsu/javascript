@@ -40,4 +40,5 @@ ERROR Deployer not found: git
 
 把它刪掉，然後重新生成和部署。
 `rm -rf .deploy_git`  
-`hexo g`  `hexo d`  
+`hexo g`  
+`hexo d`  
