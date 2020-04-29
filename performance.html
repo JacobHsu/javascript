@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    <title>Hello JavaScript | Performance </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/javascript/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/javascript/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"Performance","path":"performance.html"},"data":{"navigation":{"logo":{"text":"Hello JavaScript","type":"link","path":"index.html"},"main":[{"text":"Array","type":"label"},{"text":"Array Methods","type":"link","path":"array/array_methods.html"},{"text":"Array Merge","type":"link","path":"array/array_merge.html"},{"text":"Array Method","type":"link","path":"array/array_method.html"},{"text":"Array Insert","type":"link","path":"array/array_insert.html"},{"text":"Object to Array","type":"link","path":"array/object_to_array.html"},{"text":"Good Part","type":"link","path":"array/good_part.html"},{"text":"Object​","type":"label"},{"text":"Object assign","type":"link","path":"object/assign.html"},{"text":"Object​ keys","type":"link","path":"object/object​_keys.html"},{"text":"Operators","type":"label"},{"text":"typeof","type":"link","path":"operators/typeof.html"},{"text":"Cases","type":"label"},{"text":"JS Core","type":"link","path":"core.html"},{"text":"Case string","type":"link","path":"cases/str.html"},{"text":"Case arr","type":"link","path":"cases/arr.html"},{"text":"Case if","type":"link","path":"cases/if.html"},{"text":"Note","type":"label"},{"text":"Event","type":"link","path":"event.html"},{"text":"Performance","type":"link","path":"performance.html"},{"text":"AJAX","type":"link","path":"ajax.html"},{"text":"Asynchronous","type":"link","path":"asynchronous.html"},{"text":"RESTful API","type":"link","path":"RESTfulAPI.html"},{"text":"Deep Copy","type":"link","path":"copy.html"},{"text":"Closures","type":"link","path":"closures.html"},{"text":"Scope","type":"link","path":"scope.html"},{"text":"Variable","type":"link","path":"variable.html"},{"text":"This","type":"link","path":"this.html"},{"text":"url","type":"link","path":"url.html"},{"text":"F2E","type":"label"},{"text":"Promise","type":"link","path":"promise.html"},{"text":"GraphQL","type":"link","path":"F2E/GraphQL.html"},{"text":"RegExp","type":"link","path":"RegExp.html"},{"text":"Cookie","type":"link","path":"F2E/cookie.html"},{"text":"Header","type":"link","path":"F2E/header.html"},{"text":"Number","type":"link","path":"num.html"},{"text":"Token","type":"link","path":"F2E/token.html"},{"text":"Operators","type":"link","path":"operators.html"},{"text":"Arrow Function","type":"link","path":"arrowFunction.html"},{"text":"SWAGGER","type":"label"},{"text":"UI","type":"link","path":"swagger/ui.html"},{"text":"To HTML","type":"link","path":"swagger/to-html.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/javascript/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/javascript/index.html" class="doc-navbar__logo"><img src="/javascript/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">Hello JavaScript</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <p>##　Clean Code<br><a href="https://juejin.im/post/5d0e11196fb9a07eee5ed6d2?utm_source=gold_browser_extension" target="_blank" rel="noopener">如何寫出漂亮的 JavaScript 代碼</a></p>
+<h2 id="優化原則和方向"><a href="#優化原則和方向" class="headerlink" title="優化原則和方向"></a>優化原則和方向</h2><p>性能優化的原則是以更好的用戶體驗為標準，具體就是實現下面的目標：  </p>
+<p>多使用內存、緩存或者其他方法<br>減少 CPU 和GPU 計算，更快展現  </p>
+<p>優化的方向有兩個：  </p>
+<p>減少頁面體積，提升網路加載  </p>
+<blockquote>
+<p>靜態資源的壓縮合併（JS 代碼壓縮合併、CSS 代碼壓縮合併）<br>靜態資源緩存（資源名稱加 MD5 戳）<br>使用 CDN 讓資源加載更快  </p>
+</blockquote>
+<p>優化頁面渲染  </p>
+<blockquote>
+<p>CSS 放前面，JS 放後面<br>懶加載（圖片懶加載、下拉加載更多）<br>DOM 查詢做緩存<br>減少DOM 操作，多個操作儘量合併在一起執行（<code>DocumentFragment</code>）<br>儘早執行操作（<code>DOMContentLoaded</code>）<br>事件節流<br>使用 SSR 後端渲染，數據直接輸出到 HTML 中，減少瀏覽器使用 JS 模板渲染頁面 HTML 的時間</p>
+</blockquote>
+<h2 id="懶加載"><a href="#懶加載" class="headerlink" title="懶加載"></a>懶加載</h2><p>一開始先給為 src 賦值成一個通用的預覽圖，下拉時候再動態賦值成正式的圖片。如下，preview.png是預覽圖片，比較小，加載很快，而且很多圖片都共用這個preview.png，加載一次即可。待頁面下拉，圖片顯示出來時，再去替換src為<code>data-realsrc</code>的值。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img1"</span> <span class="attr">src</span>=<span class="string">"preview.jpg"</span> <span class="attr">data-realsrc</span>=<span class="string">'abc.png'</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> img1 = <span class="built_in">document</span>.getElementById(<span class="string">'img1'</span>)</span></span><br><span class="line"><span class="javascript">	img1.src= img1.getAttribute(<span class="string">'data-realsrc'</span>)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>另外，這裡為何要用data-開頭的屬性值？<br>所有 HTML 中自定義的屬性，都應該用<code>data-</code>開頭，因為<code>data-</code>開頭的屬性瀏覽器渲染的時候會忽略掉，提高渲染性能。</p>
+<h2 id="DOM-查詢做緩存"><a href="#DOM-查詢做緩存" class="headerlink" title="DOM 查詢做緩存"></a>DOM 查詢做緩存</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每次循環，都會查詢 DOM ，耗費性能</span></span><br><span class="line"><span class="keyword">var</span> i</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>).length; i++) &#123;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只查詢一個 DOM ，緩存在 pList 中了</span></span><br><span class="line"><span class="keyword">var</span> pList = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'p'</span>)  </span><br><span class="line"><span class="keyword">var</span> i</span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; pList.length; i++) &#123;</span><br><span class="line">    <span class="comment">//todo</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="合併-DOM-插入-createDocumentFragment"><a href="#合併-DOM-插入-createDocumentFragment" class="headerlink" title="合併 DOM 插入 (createDocumentFragment)"></a>合併 DOM 插入 (createDocumentFragment)</h2><p>DOM 操作是非常耗費性能的，因此插入多個標籤時，先插入 <code>Fragment</code> 然後再統一插入 DOM。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> listNode = <span class="built_in">document</span>.getElementById(<span class="string">'list'</span>)</span><br><span class="line"><span class="comment">// 要插入 10 個 li 標籤</span></span><br><span class="line"><span class="keyword">var</span> frag = <span class="built_in">document</span>.createDocumentFragment();</span><br><span class="line"><span class="keyword">var</span> x, li;</span><br><span class="line"><span class="keyword">for</span>(x = <span class="number">0</span>; x &lt; <span class="number">10</span>; x++) &#123;</span><br><span class="line">    li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span><br><span class="line">    li.innerHTML = <span class="string">"List item "</span> + x;</span><br><span class="line">    frag.appendChild(li);  <span class="comment">// 先放在 frag 中，最後一次性插入到 DOM 結構中。</span></span><br><span class="line">&#125;</span><br><span class="line">listNode.appendChild(frag);</span><br></pre></td></tr></table></figure>
+<h2 id="儘早執行操作-DOMContentLoaded"><a href="#儘早執行操作-DOMContentLoaded" class="headerlink" title="儘早執行操作 (DOMContentLoaded)"></a>儘早執行操作 (DOMContentLoaded)</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 頁面的全部資源加載完才會執行，包括圖片、視頻等</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// DOM 渲染完即可執行，此時圖片、視頻還可能沒有加載完</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="事件節流"><a href="#事件節流" class="headerlink" title="事件節流"></a>事件節流</h2><p>例如要在文字改變時觸發一個 change 事件，通過 <code>keyup</code> 來監聽。使用節流。  </p>
+<blockquote>
+<p>鍵盤事件 keydown：按下鍵盤鍵 keyup：釋放鍵盤鍵  </p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 輸入完觸發文字修改事件  </span></span><br><span class="line"><span class="keyword">var</span> textarea = <span class="built_in">document</span>.getElementById(<span class="string">'text'</span>)</span><br><span class="line"><span class="keyword">var</span> timeoutId</span><br><span class="line">textarea.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timeoutId) &#123;</span><br><span class="line">        clearTimeout(timeoutId)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 讓連續鍵入不要頻繁觸發 change 事件 停下才觸發  </span></span><br><span class="line">    timeoutId = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 觸發 change 事件</span></span><br><span class="line">    &#125;, <span class="number">100</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Rreferences"><a href="#Rreferences" class="headerlink" title="Rreferences"></a>Rreferences</h3><p><a href="https://is.gd/0IyWU2" target="_blank" rel="noopener">https://is.gd/0IyWU2</a><br><a href="https://www.jianshu.com/p/8f839f558319" target="_blank" rel="noopener">https://www.jianshu.com/p/8f839f558319</a>  </p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/javascript/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

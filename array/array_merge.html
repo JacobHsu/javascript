@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    <title>Hello JavaScript | Array Merge </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/javascript/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/javascript/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"Array Merge","path":"array/array_merge.html"},"data":{"navigation":{"logo":{"text":"Hello JavaScript","type":"link","path":"index.html"},"main":[{"text":"Array","type":"label"},{"text":"Array Methods","type":"link","path":"array/array_methods.html"},{"text":"Array Merge","type":"link","path":"array/array_merge.html"},{"text":"Array Method","type":"link","path":"array/array_method.html"},{"text":"Array Insert","type":"link","path":"array/array_insert.html"},{"text":"Object to Array","type":"link","path":"array/object_to_array.html"},{"text":"Good Part","type":"link","path":"array/good_part.html"},{"text":"Object​","type":"label"},{"text":"Object assign","type":"link","path":"object/assign.html"},{"text":"Object​ keys","type":"link","path":"object/object​_keys.html"},{"text":"Operators","type":"label"},{"text":"typeof","type":"link","path":"operators/typeof.html"},{"text":"Cases","type":"label"},{"text":"JS Core","type":"link","path":"core.html"},{"text":"Case string","type":"link","path":"cases/str.html"},{"text":"Case arr","type":"link","path":"cases/arr.html"},{"text":"Case if","type":"link","path":"cases/if.html"},{"text":"Note","type":"label"},{"text":"Event","type":"link","path":"event.html"},{"text":"Performance","type":"link","path":"performance.html"},{"text":"AJAX","type":"link","path":"ajax.html"},{"text":"Asynchronous","type":"link","path":"asynchronous.html"},{"text":"RESTful API","type":"link","path":"RESTfulAPI.html"},{"text":"Deep Copy","type":"link","path":"copy.html"},{"text":"Closures","type":"link","path":"closures.html"},{"text":"Scope","type":"link","path":"scope.html"},{"text":"Variable","type":"link","path":"variable.html"},{"text":"This","type":"link","path":"this.html"},{"text":"url","type":"link","path":"url.html"},{"text":"F2E","type":"label"},{"text":"Promise","type":"link","path":"promise.html"},{"text":"GraphQL","type":"link","path":"F2E/GraphQL.html"},{"text":"RegExp","type":"link","path":"RegExp.html"},{"text":"Cookie","type":"link","path":"F2E/cookie.html"},{"text":"Header","type":"link","path":"F2E/header.html"},{"text":"Number","type":"link","path":"num.html"},{"text":"Token","type":"link","path":"F2E/token.html"},{"text":"Operators","type":"link","path":"operators.html"},{"text":"Arrow Function","type":"link","path":"arrowFunction.html"},{"text":"SWAGGER","type":"label"},{"text":"UI","type":"link","path":"swagger/ui.html"},{"text":"To HTML","type":"link","path":"swagger/to-html.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/javascript/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/javascript/index.html" class="doc-navbar__logo"><img src="/javascript/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">Hello JavaScript</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h3 id="concat"><a href="#concat" class="headerlink" title="concat"></a>concat</h3><p>合併陣列</p>
+<p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/concat" target="_blank" rel="noopener">Array.prototype.concat()</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], b = [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> c = a.concat(b);</span><br><span class="line"><span class="built_in">console</span>.log(c); <span class="comment">// 1,2,3,4,5,6</span></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 1,2,3 不改變本身</span></span><br></pre></td></tr></table></figure>
+<p>JS 中合併多個陣列，且去除陣列重複元素</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>],</span><br><span class="line">    b = [<span class="string">"c"</span>, <span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> arr = a.concat(b);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ["a", "b", "c", "c", 1, 2]</span></span><br></pre></td></tr></table></figure>
+<p>要求必須返回原陣列<br><a href="https://jsbin.com/nidizam/edit?js,console" target="_blank" rel="noopener">https://jsbin.com/nidizam/edit?js,console</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 對該陣列進行循環</span></span><br><span class="line">arr.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 如果當前下標和當前元素在陣列中的lastIndex不同，則刪除這個元素</span></span><br><span class="line">  <span class="keyword">if</span> (index != arr.lastIndexOf(item)) &#123;</span><br><span class="line">    arr.splice(index, <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// "a", "b", "c", 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+<p>要求返回新陣列<br><a href="https://jsbin.com/lufavuf/1/edit?js,console" target="_blank" rel="noopener">https://jsbin.com/lufavuf/1/edit?js,console</a><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 最簡單的應該是使用陣列的 filter 方法，將當前下標和當前元素在數組中的 lastIndex 相同的元素篩選出來</span></span><br><span class="line"><span class="keyword">var</span> arr2 = arr.filter(<span class="function">(<span class="params">item,index</span>) =&gt;</span> </span><br><span class="line">    index ===arr.lastIndexOf(item)</span><br><span class="line">);</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// ["a", "b", "c", "c", 1, 2]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// ["a", "b", "c", 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/javascript/script/doc.js"></script>
+
+    
+
+  </body>
+</html>

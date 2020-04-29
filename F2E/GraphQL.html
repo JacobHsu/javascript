@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    <title>Hello JavaScript | GraphQL </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/javascript/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/javascript/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"GraphQL","path":"F2E/GraphQL.html"},"data":{"navigation":{"logo":{"text":"Hello JavaScript","type":"link","path":"index.html"},"main":[{"text":"Array","type":"label"},{"text":"Array Methods","type":"link","path":"array/array_methods.html"},{"text":"Array Merge","type":"link","path":"array/array_merge.html"},{"text":"Array Method","type":"link","path":"array/array_method.html"},{"text":"Array Insert","type":"link","path":"array/array_insert.html"},{"text":"Object to Array","type":"link","path":"array/object_to_array.html"},{"text":"Good Part","type":"link","path":"array/good_part.html"},{"text":"Object​","type":"label"},{"text":"Object assign","type":"link","path":"object/assign.html"},{"text":"Object​ keys","type":"link","path":"object/object​_keys.html"},{"text":"Operators","type":"label"},{"text":"typeof","type":"link","path":"operators/typeof.html"},{"text":"Cases","type":"label"},{"text":"JS Core","type":"link","path":"core.html"},{"text":"Case string","type":"link","path":"cases/str.html"},{"text":"Case arr","type":"link","path":"cases/arr.html"},{"text":"Case if","type":"link","path":"cases/if.html"},{"text":"Note","type":"label"},{"text":"Event","type":"link","path":"event.html"},{"text":"Performance","type":"link","path":"performance.html"},{"text":"AJAX","type":"link","path":"ajax.html"},{"text":"Asynchronous","type":"link","path":"asynchronous.html"},{"text":"RESTful API","type":"link","path":"RESTfulAPI.html"},{"text":"Deep Copy","type":"link","path":"copy.html"},{"text":"Closures","type":"link","path":"closures.html"},{"text":"Scope","type":"link","path":"scope.html"},{"text":"Variable","type":"link","path":"variable.html"},{"text":"This","type":"link","path":"this.html"},{"text":"url","type":"link","path":"url.html"},{"text":"F2E","type":"label"},{"text":"Promise","type":"link","path":"promise.html"},{"text":"GraphQL","type":"link","path":"F2E/GraphQL.html"},{"text":"RegExp","type":"link","path":"RegExp.html"},{"text":"Cookie","type":"link","path":"F2E/cookie.html"},{"text":"Header","type":"link","path":"F2E/header.html"},{"text":"Number","type":"link","path":"num.html"},{"text":"Token","type":"link","path":"F2E/token.html"},{"text":"Operators","type":"link","path":"operators.html"},{"text":"Arrow Function","type":"link","path":"arrowFunction.html"},{"text":"SWAGGER","type":"label"},{"text":"UI","type":"link","path":"swagger/ui.html"},{"text":"To HTML","type":"link","path":"swagger/to-html.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/javascript/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/javascript/index.html" class="doc-navbar__logo"><img src="/javascript/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">Hello JavaScript</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <p>GraphQL 是一個用於 API 的查詢語言，是一個使用基於類型系統來執行查詢的服務端運行時（類型系統由你的數據定義）。GraphQL 並沒有和任何特定數據庫或者存儲引擎綁定，而是依靠你現有的代碼和數據支撐。</p>
+<p><img src="https://i.imgur.com/Jdvb0fV.png" alt="GraphQL">  </p>
+<p>使用一個 API 系統就像在百貨公司的地下美食廣場買晚餐，<br>傳統的 <code>RESTful API</code> 會要求你要一家一家 (很多 route) 去點餐，耗時又費力。</p>
+<p><code>GraphQL</code> 的體驗就如同使用APP一樣，百貨公司的餐飲店家們開發出一款點餐APP整合各家的點餐介面，消費者只要把想點的各家食物放進菜單，一鍵送出後就只要等待所有餐點送來桌上，省時又不費力！此外通過 APP 還可以更容易取得額外資訊如餐廳的聯絡方式</p>
+<blockquote>
+<p>有了 GraphQL ，你可以把你的商業模型 (business model) 像圖形 (graph) 一樣串連起來<br>不同或相同type 的資料可以串接再一起，使得 GraphQL 只要一筆 query 就能一次拿全資料且資料格式非常有彈性！<br>反觀 RESTful API 同樣的資料需要多筆 request 才能拿到且格式難以調整。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>優點</th>
+<th>缺點</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>資料只拿剛好且彈性十足</td>
+<td>過於自由、規範少</td>
+</tr>
+<tr>
+<td>程式即文檔</td>
+<td>學習成本</td>
+</tr>
+<tr>
+<td>前端控制權提升</td>
+<td>相關社群仍在開發中 (Apollo)</td>
+</tr>
+<tr>
+<td>強型別</td>
+<td>Server Side Caching 實作困難</td>
+</tr>
+</tbody>
+</table>
+<p>Server Side Caching 實作困難</p>
+<blockquote>
+<p>RESTful API 的 endpoint 固定且資料需求單純，然而 GraphQL 難以保證每次 request 的模樣，因此較難實作 Caching</p>
+</blockquote>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://graphql.cn/learn/" target="_blank" rel="noopener">https://graphql.cn/learn/</a><br><a href="https://ithelp.ithome.com.tw/articles/10200678" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10200678</a>  </p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/javascript/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
