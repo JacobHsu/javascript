@@ -1,10 +1,20 @@
 # JavaScript
 
-# hexo 
+## local
 
+`$ hexo s`  
+INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/javascript/
+
+doc\source\_data\navigation.yaml
+
+## hexo 
+
+[commands](https://hexo.io/zh-tw/docs/commands.html)  
 [hexo-theme-doc](https://github.com/zalando-incubator/hexo-theme-doc)  
 
 _config.yaml
+
 ```js
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -17,12 +27,12 @@ deploy:
     repository: https://github.com/JacobHsu/javascript
     branch: gh-pages
 ```
+
 ERROR Deployer not found: git
 `npm install hexo-deployer-git --save`  
 
 `$doc> hexo g`
 `$doc> hexo d`
-
 
 ## Notes
 

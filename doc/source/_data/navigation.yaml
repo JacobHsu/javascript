@@ -54,6 +54,15 @@
       "path": "object/object​_keys.html"
     },
     {
+      "text": "Operators",
+      "type": "label"
+    },
+    {
+      "text": "typeof",
+      "type": "link",
+      "path": "operators/typeof.html"
+    },
+    {
       "text": "Cases",
       "type": "label"
     },
