@@ -63,6 +63,11 @@
       "path": "operators/typeof.html"
     },
     {
+      "text": "delete",
+      "type": "link",
+      "path": "operators/delete.html"
+    },
+    {
       "text": "Cases",
       "type": "label"
     },
