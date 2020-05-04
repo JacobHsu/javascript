@@ -60,6 +60,11 @@
     {
       "text": "typeof",
       "type": "link",
+      "path": "operators/precedence.html"
+    },
+    {
+      "text": "typeof",
+      "type": "link",
       "path": "operators/typeof.html"
     },
     {
