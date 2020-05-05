@@ -2,6 +2,22 @@ title: Closures
 ---
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+
+
+```js
+var name = "hello";
+(function(){
+  if(typeof name === "undefined") {
+    var name = "world";
+    console.log("goodbye "+ name); 
+  } else {
+    console.log("hello "+name);
+  }
+})();
+```
+
+"goodbye world"
+
 ```js
 function makeAdder(x) {
   return function(y) {
