@@ -3,7 +3,6 @@ title: Closures
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
-
 ```js
 var name = "hello";
 (function(){
