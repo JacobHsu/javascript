@@ -35,6 +35,11 @@
       "path": "array/object_to_array.html"
     },
     {
+      "text": "Array Filter",
+      "type": "link",
+      "path": "array/filter.html"
+    },
+    {
       "text": "Good Part",
       "type": "link",
       "path": "array/good_part.html"
