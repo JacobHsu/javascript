@@ -35,6 +35,15 @@
         <p><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="noopener">filter</a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">arr[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> result = arr.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> x === <span class="literal">undefined</span>;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(result) <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
 <p>filter 和 map 基本屬性 會把 或直接略過那些空的東西 不處理</p>
+<h2 id="‘1’-‘2’-‘3’-filter-parseInt"><a href="#‘1’-‘2’-‘3’-filter-parseInt" class="headerlink" title="[‘1’, ‘2’, ‘3’].filter(parseInt) ?"></a>[‘1’, ‘2’, ‘3’].filter(parseInt) ?</h2><blockquote>
+<p><code>filter</code> 为数组中的每个元素调用一次 callback 函数，并利用所有使得 callback 返回 true 或等价于 true 的值的元素创建一个新数组。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>, <span class="number">0</span>); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>, <span class="number">1</span>); <span class="comment">// 不返回</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>, <span class="number">2</span>); <span class="comment">// NaN 不返回</span></span><br></pre></td></tr></table></figure>
+<p>parseInt(‘1’, 0)：radix的值為0，判斷字符串發現介於1~9，用10進制轉換，結果為1，所以callback的結果等價於true，返回元素’1’。</p>
+<p>parseInt(‘2’, 1)：radix的值為1，如果該參數小於 2 或者大於 36，則 parseInt() 將返回 NaN，結果不等價於true，不返回。</p>
+<p>parseInt(‘3’, 2): radix的值為2，這就意味著字符串將被解析成字節數，也就是僅僅包含數值0和1。parseInt的規範指出，它僅嘗試分析第一個字符的左側。這個字符串的第一個字符是“3”，它並不是基礎基數2的一個有效數字。所以這個子字符串將被解析為空。如果子字符串被解析成空了，函數將返回為NaN。</p>
+<p><a href="https://juejin.im/post/5dbff8735188252ddb2fd25e" target="_blank" rel="noopener">https://juejin.im/post/5dbff8735188252ddb2fd25e</a></p>
+<p><code>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].filter(parseInt) //  [&quot;1&quot;]</code></p>
 
         <div id="react-support-footer-root"></div>
       </div>
