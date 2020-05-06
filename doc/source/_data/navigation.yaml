@@ -102,6 +102,11 @@
       "path": "cases/if.html"
     },
     {
+      "text": "Case math",
+      "type": "link",
+      "path": "cases/math.html"
+    },
+    {
       "text": "Note",
       "type": "label"
     },
