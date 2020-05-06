@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    <title>Hello JavaScript | 問題 </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/javascript/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/javascript/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"問題","path":"math.html"},"data":{"navigation":{"logo":{"text":"Hello JavaScript","type":"link","path":"index.html"},"main":[{"text":"Array","type":"label"},{"text":"Array Methods","type":"link","path":"array/array_methods.html"},{"text":"Array Merge","type":"link","path":"array/array_merge.html"},{"text":"Array Method","type":"link","path":"array/array_method.html"},{"text":"Array Insert","type":"link","path":"array/array_insert.html"},{"text":"Object to Array","type":"link","path":"array/object_to_array.html"},{"text":"Array Filter","type":"link","path":"array/filter.html"},{"text":"Good Part","type":"link","path":"array/good_part.html"},{"text":"Object​","type":"label"},{"text":"Object assign","type":"link","path":"object/assign.html"},{"text":"Object​ keys","type":"link","path":"object/object​_keys.html"},{"text":"Operators","type":"label"},{"text":"typeof","type":"link","path":"operators/precedence.html"},{"text":"typeof","type":"link","path":"operators/typeof.html"},{"text":"delete","type":"link","path":"operators/delete.html"},{"text":"Cases","type":"label"},{"text":"JS Core","type":"link","path":"core.html"},{"text":"Case string","type":"link","path":"cases/str.html"},{"text":"Case arr","type":"link","path":"cases/arr.html"},{"text":"Case if","type":"link","path":"cases/if.html"},{"text":"Case math","type":"link","path":"cases/math.html"},{"text":"Note","type":"label"},{"text":"Event","type":"link","path":"event.html"},{"text":"Performance","type":"link","path":"performance.html"},{"text":"AJAX","type":"link","path":"ajax.html"},{"text":"Asynchronous","type":"link","path":"asynchronous.html"},{"text":"RESTful API","type":"link","path":"RESTfulAPI.html"},{"text":"Deep Copy","type":"link","path":"copy.html"},{"text":"Closures","type":"link","path":"closures.html"},{"text":"Scope","type":"link","path":"scope.html"},{"text":"Variable","type":"link","path":"variable.html"},{"text":"This","type":"link","path":"this.html"},{"text":"url","type":"link","path":"url.html"},{"text":"F2E","type":"label"},{"text":"Promise","type":"link","path":"promise.html"},{"text":"GraphQL","type":"link","path":"F2E/GraphQL.html"},{"text":"RegExp","type":"link","path":"RegExp.html"},{"text":"Cookie","type":"link","path":"F2E/cookie.html"},{"text":"Header","type":"link","path":"F2E/header.html"},{"text":"Number","type":"link","path":"num.html"},{"text":"Token","type":"link","path":"F2E/token.html"},{"text":"Operators","type":"link","path":"operators.html"},{"text":"Arrow Function","type":"link","path":"arrowFunction.html"},{"text":"SWAGGER","type":"label"},{"text":"UI","type":"link","path":"swagger/ui.html"},{"text":"To HTML","type":"link","path":"swagger/to-html.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/javascript/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/javascript/index.html" class="doc-navbar__logo"><img src="/javascript/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">Hello JavaScript</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <h1 id="浮點數運算的坑"><a href="#浮點數運算的坑" class="headerlink" title="浮點數運算的坑"></a>浮點數運算的坑</h1><p><a href="https://github.com/camsong/blog/issues/9" target="_blank" rel="noopener">JavaScript 浮点数陷阱及解法</a></p>
+<p>當你拿到 1.4000000000000001 這樣的數據要展示時，建議使用 toPrecision 湊整併 parseFloat 轉成數字後再顯示，如下：</p>
+<p><code>parseFloat(1.4000000000000001.toPrecision(12)) === 1.4  // True</code></p>
+<p>百分比 轉 小數 問題<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.9</span>;</span><br><span class="line"><span class="keyword">var</span> b = a / <span class="number">100</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">parseFloat</span>( (a / <span class="number">100</span>).toPrecision(<span class="number">12</span>)) </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b) <span class="comment">// 0.009000000000000001</span></span><br><span class="line"><span class="built_in">console</span>.log(c) <span class="comment">// 0.009</span></span><br></pre></td></tr></table></figure></p>
+<h1 id="科學符號處理"><a href="#科學符號處理" class="headerlink" title="科學符號處理"></a>科學符號處理</h1><p>npm <a href="https://www.npmjs.com/package/from-exponential" target="_blank" rel="noopener">from-exponential</a>  </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-text=<span class="string">"getPriceValue(order.itemPrice)"</span>&gt;&lt;/span&gt;</span><br><span class="line"><span class="keyword">import</span> fromExponential <span class="keyword">from</span> <span class="string">'from-exponential'</span></span><br><span class="line">methods: &#123;</span><br><span class="line">    getPriceValue(value) &#123;</span><br><span class="line">      <span class="keyword">return</span> fromExponential(value)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="why-0-1-0-2-0-3"><a href="#why-0-1-0-2-0-3" class="headerlink" title="why 0.1 + 0.2 != 0.3"></a>why 0.1 + 0.2 != 0.3</h1><blockquote>
+<p>0.1 + 0.2 == 0.3<br>false</p>
+</blockquote>
+<blockquote>
+<p>0.1 + 0.2<br>0.30000000000000004</p>
+</blockquote>
+<p>這只是JavaScript遵循IEEE 754標準所產生的必然結果。<code>IEEE 754標準中</code>的浮點數並不能精確地表達小數（比如說0.1），</p>
+<p>JavaScript中的小數採用的是雙精度(64位)表示的，由三部分組成：　符 + 階碼 + 尾數<br>IEEE 754 雙精度。六十四位中符號位佔一位，整數位佔十一位，其餘五十二位都為小數位。<br>因為浮點數隻有52位有效數字，從第53位開始，就舍入了。這樣就造成了“浮點數精度損失”問題。<br>因為 0.1 和 0.2 都是無限循環的二進制了，所以在小數位末尾處需要判斷是否進位（就和十進制的四捨五入一樣）。</p>
+<p>計算機表示十進制是採用二進製表示的，所以 0.1 在二進製表示為<br>`0.1.toString(2) // “0.00011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 01”</p>
+<p>小數的算法，是乘2</p>
+<p>0.1<br>× 2<br>￣￣￣￣<br>0.2 → 取小數前的 0 </p>
+<p>0.2<br>× 2<br>￣￣￣￣<br>0.4 → 取小數前的 0 </p>
+<p>0.4<br>× 2<br>￣￣￣￣<br>0.8  → 取小數前的 0 </p>
+<p>0.8<br>× 2<br>￣￣￣￣<br>1.6  → 取小數前的 1</p>
+<p>0.6<br>× 2<br>￣￣￣￣<br>1.2  → 取小數前的 1</p>
+<p>0.2<br>× 2<br>￣￣￣￣<br>0.4  → 取小數前的 0</p>
+<p>十進位 0.1  = 二進位 0.000110</p>
+<p>0.1 <em> 2 = 0.2 # 0<br>0.2 </em> 2 = 0.4 # 0<br>0.4 <em> 2 = 0.8 # 0<br>0.8 </em> 2 = 1.6 # 1<br>0.6 <em> 2 = 1.2 # 1<br>0.2 </em> 2 = 0.4 # 0</p>
+<p>從上面可以看出，0.1的二進制格式是：0.0001100011….。這是一個二進制無限循環小數，但計算機內存有限，我們不能用儲存所有的小數位數。那麼在精度與內存間如何取捨呢？</p>
+<p>答案是：<code>在某個精度點直接捨棄</code>(第53位開始)。當然，代價就是，0.1在計算機內部根本就不是精確的0.1，而是一個有舍入誤差的0.1。當代碼被編譯或解釋後，0.1已經被四捨五入成一個與之很接近的計算機內部數字，以至於計算還沒開始，一個很小的舍入錯誤就已經產生了。這也就是 0.1 + 0.2 不等於0.3 的原因。</p>
+<p>使用JavaScript內置的函數<code>toPrecision</code>或<code>toFixed</code>來保留一定的精度：  </p>
+<p><code>(0.1 + 0.2).toPrecision(10) == 0.3</code>     </p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p><code>(0.1 + 0.2).toFixed(10) == 0.3</code>  </p>
+<blockquote>
+<p>true</p>
+</blockquote>
+<p>不要相信js的計算 善用 <a href="https://mathjs.org/" target="_blank" rel="noopener">math.js</a></p>
+<h3 id="Rreferences"><a href="#Rreferences" class="headerlink" title="Rreferences"></a>Rreferences</h3><p><a href="http://ourjs.com/detail/54695381bc3f9b154e000046" target="_blank" rel="noopener">http://ourjs.com/detail/54695381bc3f9b154e000046</a><br><a href="https://segmentfault.com/a/1190000012175422" target="_blank" rel="noopener">https://segmentfault.com/a/1190000012175422</a><br><a href="https://github.com/InterviewMap/CS-Interview-Knowledge-Map/blob/master/JS/JS-ch.md#%E4%B8%BA%E4%BB%80%E4%B9%88-01--02--03" target="_blank" rel="noopener">https://github.com/InterviewMap/CS-Interview-Knowledge-Map/blob/master/JS/JS-ch.md#%E4%B8%BA%E4%BB%80%E4%B9%88-01--02--03</a></p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/javascript/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
