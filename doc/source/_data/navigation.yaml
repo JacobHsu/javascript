@@ -78,6 +78,15 @@
       "path": "operators/delete.html"
     },
     {
+      "text": "String",
+      "type": "label"
+    },
+    {
+      "text": "queue",
+      "type": "link",
+      "path": "string/queue.html"
+    },
+    {
       "text": "Cases",
       "type": "label"
     },
