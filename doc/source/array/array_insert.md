@@ -72,6 +72,18 @@ items.splice(items.length / 2, 0, 3);
 console.log(items);
 ```
 
+[Array.prototype.splice()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice)
+
+`splice()` 方法可以藉由刪除既有元素並／或加入新元素來改變一個陣列的內容
+
+```js
+const months = ['Jan', 'March', 'April', 'June'];
+months.splice(1, 3);
+console.log(months); // ["Jan"]
+months.splice(1, 0, 'Feb'); // inserts at index 1
+console.log(months); // ["Jan", "Feb"]
+```
+
 ## 拼接兩個陣列
 
 利用 `Array.prototype.concat` 方法
