@@ -194,6 +194,15 @@
       "path": "RegExp.html"
     },
     {
+      "text": "http",
+      "type": "label"
+    },
+    {
+      "text": "caching",
+      "type": "link",
+      "path": "http/caching.html"
+    },
+    {
       "text": "Cookie",
       "type": "link",
       "path": "F2E/cookie.html"
