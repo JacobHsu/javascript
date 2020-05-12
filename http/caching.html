@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+
+    <title>Hello JavaScript | HTTP 緩存 </title>
+    <meta name="description" content>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Ubuntu:300,400,500,600,700" rel="stylesheet">
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="/javascript/style/doc.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="/javascript/images/favicon.ico">
+
+    
+
+  </head>
+  <body>
+
+   <script>window.__INITIAL_STATE__ = {"page":{"title":"HTTP 緩存","path":"http/caching.html"},"data":{"navigation":{"logo":{"text":"Hello JavaScript","type":"link","path":"index.html"},"main":[{"text":"Array","type":"label"},{"text":"Array Methods","type":"link","path":"array/array_methods.html"},{"text":"Array Merge","type":"link","path":"array/array_merge.html"},{"text":"Array Method","type":"link","path":"array/array_method.html"},{"text":"Array Insert","type":"link","path":"array/array_insert.html"},{"text":"Object to Array","type":"link","path":"array/object_to_array.html"},{"text":"Array Filter","type":"link","path":"array/filter.html"},{"text":"Good Part","type":"link","path":"array/good_part.html"},{"text":"Object​","type":"label"},{"text":"Object assign","type":"link","path":"object/assign.html"},{"text":"Object​ keys","type":"link","path":"object/object​_keys.html"},{"text":"Operators","type":"label"},{"text":"typeof","type":"link","path":"operators/precedence.html"},{"text":"typeof","type":"link","path":"operators/typeof.html"},{"text":"delete","type":"link","path":"operators/delete.html"},{"text":"String","type":"label"},{"text":"queue","type":"link","path":"string/queue.html"},{"text":"Cases","type":"label"},{"text":"JS Core","type":"link","path":"core.html"},{"text":"Case string","type":"link","path":"cases/str.html"},{"text":"Case arr","type":"link","path":"cases/arr.html"},{"text":"Case if","type":"link","path":"cases/if.html"},{"text":"Case math","type":"link","path":"cases/math.html"},{"text":"Note","type":"label"},{"text":"Event","type":"link","path":"event.html"},{"text":"Performance","type":"link","path":"performance.html"},{"text":"AJAX","type":"link","path":"ajax.html"},{"text":"Asynchronous","type":"link","path":"asynchronous.html"},{"text":"RESTful API","type":"link","path":"RESTfulAPI.html"},{"text":"Deep Copy","type":"link","path":"copy.html"},{"text":"Closures","type":"link","path":"closures.html"},{"text":"Scope","type":"link","path":"scope.html"},{"text":"Variable","type":"link","path":"variable.html"},{"text":"This","type":"link","path":"this.html"},{"text":"url","type":"link","path":"url.html"},{"text":"F2E","type":"label"},{"text":"Promise","type":"link","path":"promise.html"},{"text":"GraphQL","type":"link","path":"F2E/GraphQL.html"},{"text":"RegExp","type":"link","path":"RegExp.html"},{"text":"http","type":"label"},{"text":"caching","type":"link","path":"http/caching.html"},{"text":"Cookie","type":"link","path":"F2E/cookie.html"},{"text":"Header","type":"link","path":"F2E/header.html"},{"text":"Number","type":"link","path":"num.html"},{"text":"Token","type":"link","path":"F2E/token.html"},{"text":"Operators","type":"link","path":"operators.html"},{"text":"Arrow Function","type":"link","path":"arrowFunction.html"},{"text":"SWAGGER","type":"label"},{"text":"UI","type":"link","path":"swagger/ui.html"},{"text":"To HTML","type":"link","path":"swagger/to-html.html"},{"text":"SUPPORT AND FEEDBACK","type":"label"},{"text":"Raise an Issue on Github","type":"link","path":"https://github.bus.zalan.do/stargate/hexo-stargate-doc-theme-seed/issues/new"}]}},"config":{"timezone":"UTC","root":"/javascript/","time_format":"HH:mm:ss","theme":"../node_modules/hexo-theme-doc","theme_config":{"swagger_ui":{"version":2,"permalinks":true,"api_explorer":true,"download":"Download specification","show_extensions":false,"deep_linking":true,"display_operation_id":false,"doc_expansion":"none"},"search":{"skip":false,"background":false,"route":"/lunr.json"},"favicon":"images/favicon.ico"}}}</script>
+
+    <div id="react-navigation-root"><div class="doc-navigation" data-reactroot><nav class="doc-navbar"><a href="/javascript/index.html" class="doc-navbar__logo"><img src="/javascript/images/logo.png" class="doc-navbar__logo__img"><span class="doc-navbar__logo__text">Hello JavaScript</span></a><i class="dc-icon dc-icon--close dc-icon--interactive doc-sidebar-close doc-navbar__sidebar-close doc-navbar__sidebar-close--desktop"></i><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-navbar__sidebar-toggle"></i></nav><nav class="doc-sidebar"><div class="doc-sidebar__vertical-menu"><i class="dc-icon dc-icon--menu dc-icon--interactive doc-sidebar-toggle doc-sidebar-toggle--primary doc-sidebar__vertical-menu__item"></i><i class="dc-icon dc-icon--search dc-icon--interactive doc-sidebar__vertical-menu__item doc-sidebar__vertical-menu__item--primary"></i></div><div class="doc-sidebar-content"><div class="doc-sidebar__search-form"></div><ul class="doc-sidebar-list"></ul></div></nav></div></div>
+    <div class="doc-content">
+  <div class="dc-page">
+    <div class="dc-card">
+      <div id="react-search-results-root"></div>
+      <div id="page-content" class="doc-formatting">
+        <p>HTTP 緩存分為 2 種，一種是強緩存，另一種是協商緩存。<br>主要作用是可以加快資源獲取速度，提升用戶體驗，減少網絡傳輸，緩解服務端的壓力。</p>
+<p>這是緩存運作的一個整體流程圖：</p>
+<p><img src="https://imgur.com/NdIewPP.png" alt="Alt http chching"></p>
+<h2 id="強緩存"><a href="#強緩存" class="headerlink" title="強緩存"></a>強緩存</h2><p>不需要發送請求到服務端，直接讀取瀏覽器本地緩存，在 Chrome 的 Network 中顯示的 HTTP 狀態碼是 200 ，在 Chrome 中，強緩存又分為 Disk Cache (存放在硬盤中)和 Memory Cache (存放在內存中)，存放的位置是由瀏覽器控制的。</p>
+<p>是否強緩存由 <code>Expires</code>、<code>Cache-Control</code> 和 <code>Pragma</code> 3 個 Header 屬性共同來控制。</p>
+<h3 id="Expires"><a href="#Expires" class="headerlink" title="Expires"></a>Expires</h3><p>Expires 的值是一個 <code>HTTP 日期</code>，在瀏覽器發起請求時，會根據系統時間和 Expires 的值進行比較，如果系統時間超過了 Expires 的值，緩存失效。由於和系統時間進行比較，所以當系統時間和服務器時間不一致的時候，會有緩存有效期不准的問題。Expires 的優先級在三個 Header 屬性中是最低的。</p>
+<h3 id="Cache-Control"><a href="#Cache-Control" class="headerlink" title="Cache-Control"></a>Cache-Control</h3><p>Cache-Control 是 HTTP/1.1 中新增的屬性，在請求頭和響應頭中都可以使用，常用的屬性值如有：</p>
+<p>max-age：單位是秒，緩存時間計算的方式是距離發起的時間的秒數，超過間隔的秒數緩存失效<br><code>no-cache</code>：不使用強緩存，需要與服務器驗證緩存是否新鮮<br><code>no-store</code>：禁止使用緩存（包括協商緩存），每次都向服務器請求最新的資源<br>private：專用於個人的緩存，中間代理、CDN 等不能緩存此響應<br>public：響應可以被中間代理、CDN 等緩存<br>must-revalidate：在緩存過期前可以使用，過期後必須向服務器驗證</p>
+<p>###　驗證強緩存</p>
+<p>本地通過 express 起一個服務來驗證強緩存的 3 個屬性，代碼如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">var</span> options = &#123; </span><br><span class="line">  etag: <span class="literal">false</span>, <span class="comment">// 禁用協商緩存</span></span><br><span class="line">  lastModified: <span class="literal">false</span>, <span class="comment">// 禁用協商緩存</span></span><br><span class="line">  setHeaders: <span class="function">(<span class="params">res, path, stat</span>) =&gt;</span> &#123;</span><br><span class="line">    res.set(<span class="string">'Cache-Control'</span>, <span class="string">'max-age=10'</span>); <span class="comment">// 強緩存超時時間為10秒</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">app.use(express.static((__dirname + <span class="string">'/public'</span>), options));</span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure>
+<p>第一次加載，頁面會向服務器請求數據，並在 Response Header 中添加 Cache-Control ，過期時間為 10 秒。<br>第二次加載，Date 頭屬性未更新，可以看到瀏覽器直接使用了強緩存，實際沒有發送請求。<br>過了 10 秒的超時時間之後，再次請求資源：<br>當 Pragma 和 Cache-Control 同時存在的時候，Pragma 的優先級高於 Cache-Control。</p>
+<p>Headers &gt; Response Headers &gt; Cache-Control: max-age=10 / Pragma: no-cache</p>
+<h3 id="Pragma"><a href="#Pragma" class="headerlink" title="Pragma"></a>Pragma</h3><p>Pragma 只有一個屬性值，就是 <code>no-cache</code> ，效果和 Cache-Control 中的 no-cache 一致，不使用強緩存，需要與服務器驗證緩存是否新鮮，在 3 個頭部屬性中的優先級最高。</p>
+<h2 id="協商緩存"><a href="#協商緩存" class="headerlink" title="協商緩存"></a>協商緩存</h2><p>當瀏覽器的強緩存失效的時候或者請求頭中設置了不走強緩存，並且在請求頭中設置了If-Modified-Since 或者 If-None-Match 的時候，會將這兩個屬性值到服務端去驗證是否命中協商緩存，如果命中了協商緩存，會返回 304 狀態，加載瀏覽器緩存，並且響應頭會設置 Last-Modified 或者 ETag 屬性。</p>
+<h3 id="ETag-If-None-Match"><a href="#ETag-If-None-Match" class="headerlink" title="ETag/If-None-Match"></a>ETag/If-None-Match</h3><p>ETag/If-None-Match 的值是<code>一串 hash 碼</code>，代表的是<code>一個資源的標識</code>符，當服務端的文件變化的時候，它的 hash碼會隨之改變，通過請求頭中的 If-None-Match 和當前文件的 hash 值進行比較，如果相等則表示命中協商緩存。ETag 又有強弱校驗之分，如果 hash 碼是以 “W/“ 開頭的一串字符串，說明此時協商緩存的校驗是弱校驗的，只有服務器上的文件差異（根據 ETag 計算方式來決定）達到能夠觸發 hash 值後綴變化的時候，才會真正地請求資源，否則返回 304 並加載瀏覽器緩存。</p>
+<h3 id="Last-Modified-If-Modified-Since"><a href="#Last-Modified-If-Modified-Since" class="headerlink" title="Last-Modified/If-Modified-Since"></a>Last-Modified/If-Modified-Since</h3><p>Last-Modified/If-Modified-Since 的值代表的是<code>文件的最後修改時間</code>，第一次請求服務端會把資源的最後修改時間放到 Last-Modified 響應頭中，第二次發起請求的時候，請求頭會帶上上一次響應頭中的 Last-Modified 的時間，並放到 If-Modified-Since 請求頭屬性中，服務端根據文件最後一次修改時間和 If-Modified-Since 的值進行比較，如果相等，返回 304 ，並加載瀏覽器緩存。</p>
+<p>###　驗證協商緩存</p>
+<p>本地通過 express 起一個服務來驗證協商緩存，代碼如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"><span class="keyword">var</span> options = &#123; </span><br><span class="line">  etag: <span class="literal">true</span>, <span class="comment">// 開啟協商緩存</span></span><br><span class="line">  lastModified: <span class="literal">true</span>, <span class="comment">// 開啟協商緩存</span></span><br><span class="line">  setHeaders: <span class="function">(<span class="params">res, path, stat</span>) =&gt;</span> &#123;</span><br><span class="line">    res.set(&#123;</span><br><span class="line">      <span class="string">'Cache-Control'</span>: <span class="string">'max-age=00'</span>, <span class="comment">// 瀏覽器不走強緩存</span></span><br><span class="line">      <span class="string">'Pragma'</span>: <span class="string">'no-cache'</span>, <span class="comment">// 瀏覽器不走強緩存</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">app.use(express.static((__dirname + <span class="string">'/public'</span>), options));</span><br><span class="line">app.listen(<span class="number">3001</span>);</span><br></pre></td></tr></table></figure>
+<p>第二次請求資源，服務端根據請求頭中的 If-Modified-Since 和 If-None-Match 驗證文件是否修改。</p>
+<p>Tag/If-None-Match 的出現主要解決了 Last-Modified/If-Modified-Since 所解決不了的問題：</p>
+<p>如果文件的修改頻率在秒級以下，Last-Modified/If-Modified-Since 會錯誤地返回 304<br>如果文件被修改了，但是內容沒有任何變化的時候，Last-Modified/If-Modified-Since 會錯誤地返回 304</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Caching" target="_blank" rel="noopener">HTTP caching</a><br><a href="https://juejin.im/post/5eb7f811f265da7bbc7cc5bd?utm_source=gold_browser_extension" target="_blank" rel="noopener">圖解 HTTP 緩存</a></p>
+
+        <div id="react-support-footer-root"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+
+    
+
+    <!-- js vendors -->
+    <script src="//code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/lunr.js/2.1.0/lunr.min.js"></script>
+
+    <!-- js source  -->
+    <script src="/javascript/script/doc.js"></script>
+
+    
+
+  </body>
+</html>
