@@ -59,11 +59,20 @@
       "path": "object/object​_keys.html"
     },
     {
+      "text": "Glossary",
+      "type": "label"
+    },
+    {
+      "text": "Hoisting",
+      "type": "link",
+      "path": "glossary/hoisting.html"
+    },    
+    {
       "text": "Operators",
       "type": "label"
     },
     {
-      "text": "typeof",
+      "text": "precedence",
       "type": "link",
       "path": "operators/precedence.html"
     },
@@ -73,9 +82,13 @@
       "path": "operators/typeof.html"
     },
     {
-      "text": "delete",
+      "text": "Statements",
+      "type": "label"
+    },
+    {
+      "text": "block",
       "type": "link",
-      "path": "operators/delete.html"
+      "path": "statements/block.html"
     },
     {
       "text": "String",
@@ -168,6 +181,11 @@
       "text": "This",
       "type": "link",
       "path": "this.html"
+    },
+    {
+      "text": "delete",
+      "type": "link",
+      "path": "operators/delete.html"
     },
     {
       "text": "url",
