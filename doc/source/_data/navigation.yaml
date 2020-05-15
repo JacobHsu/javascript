@@ -10,6 +10,11 @@
       "type": "label"
     },
     {
+      "text": "Array.map()",
+      "type": "link",
+      "path": "array/map.html"
+    },
+    {
       "text": "Array Methods",
       "type": "link",
       "path": "array/array_methods.html"
@@ -80,6 +85,11 @@
       "text": "typeof",
       "type": "link",
       "path": "operators/typeof.html"
+    },
+    {
+      "text": "Destructuring assignment",
+      "type": "link",
+      "path": "operators/destructuring_assignment.html"
     },
     {
       "text": "Statements",
