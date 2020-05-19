@@ -10,7 +10,7 @@ var arr2 = arr.map(function(item,index){
     return '<b>'+item+'</b>';
 
 })
-console.log(arr2); 
+console.log(arr2);
 // expected output: ["<b>1</b>", "<b>2</b>", "<b>3</b>"]
 ```
 

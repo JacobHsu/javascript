@@ -77,6 +77,11 @@
       "type": "label"
     },
     {
+      "text": "function",
+      "type": "link",
+      "path": "operators/function.html"
+    },
+    {
       "text": "precedence",
       "type": "link",
       "path": "operators/precedence.html"
