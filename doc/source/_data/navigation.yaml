@@ -71,7 +71,16 @@
       "text": "Hoisting",
       "type": "link",
       "path": "glossary/hoisting.html"
-    },    
+    },
+    {
+      "text": "Global_Objects",
+      "type": "label"
+    },
+    {
+      "text": "Date",
+      "type": "link",
+      "path": "global/date.html"
+    },     
     {
       "text": "Operators",
       "type": "label"
