@@ -115,6 +115,11 @@
       "path": "statements/block.html"
     },
     {
+      "text": "AsyncFunction",
+      "type": "link",
+      "path": "statements/AsyncFunction.html"
+    },
+    {
       "text": "String",
       "type": "label"
     },
