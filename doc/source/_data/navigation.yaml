@@ -54,6 +54,11 @@
       "type": "label"
     },
     {
+      "text": "Object create",
+      "type": "link",
+      "path": "object/create.html"
+    },
+    {
       "text": "Object assign",
       "type": "link",
       "path": "object/assign.html"
