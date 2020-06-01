@@ -69,6 +69,15 @@
       "path": "object/object​_keys.html"
     },
     {
+      "text": "function",
+      "type": "label"
+    },
+    {
+      "text": "factory function",
+      "type": "link",
+      "path": "function/factory​_factory.html"
+    },
+    {
       "text": "Glossary",
       "type": "label"
     },
