@@ -134,6 +134,11 @@
       "path": "statements/AsyncFunction.html"
     },
     {
+      "text": "let",
+      "type": "link",
+      "path": "statements/let.html"
+    },
+    {
       "text": "String",
       "type": "label"
     },

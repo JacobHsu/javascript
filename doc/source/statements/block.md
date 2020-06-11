@@ -74,3 +74,25 @@ if (false) {
 // 在Safari里:
 // 'foo' 变量名被提升. 而且 typeof foo 为 function
 ```
+
+`var`不會產生塊級作用域,`let`會產生塊級作用域。
+
+```js
+if(false){
+    var a = 1;
+    let b = 2;
+}
+console.log(a); 
+console.log(b); 
+```
+
+代碼相當於:
+```js
+var a;
+if(false){
+    a = 1;
+    let b = 2;
+}
+console.log(a); // undefined
+console.log(b); // ReferenceError: b is not defined
+```
