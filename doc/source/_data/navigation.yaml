@@ -139,6 +139,11 @@
       "path": "statements/let.html"
     },
     {
+      "text": "for",
+      "type": "link",
+      "path": "statements/for.html"
+    },
+    {
       "text": "String",
       "type": "label"
     },
