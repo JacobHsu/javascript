@@ -104,6 +104,18 @@ doByOrder(tasks, console.log.bind(console)); // expect to be ["a", "b", "c"]
 
 <iframe height="560px" width="100%" src="https://repl.it/@JacobHsu/Promise2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+事件循環：javascript的執行規則裡面有個`事件循環Event Loot`的規則
+在事件循環中，異步事件會放到異步隊列裡面，  
+但是異步隊列裡面又分為宏任務和微任務，  
+
+瀏覽器端的  
+宏任務一般有：`script標籤,setTimeout,setInterval,setImmediate,requestAnimationFrame`  
+微任務有：`MutationObserver,Promise.then catch finally`  
+
+宏任務會阻塞瀏覽器的渲染進程，微任務會在宏任務結束後立即執行，在渲染之前。
+
+<iframe height="1280px" width="100%" src="https://repl.it/@JacobHsu/Promise3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 ### References
 
 [把setTimeout包裝成Promise、等待所有setTimout的callback function執行完程式流程才往下執行](https://dotblogs.com.tw/shadow/2017/11/17/112535)
