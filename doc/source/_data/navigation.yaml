@@ -94,7 +94,12 @@
       "text": "Date",
       "type": "link",
       "path": "global/date.html"
-    },     
+    },
+    {
+      "text": "call、apply、bind",
+      "type": "link",
+      "path": "global/function.html"
+    },      
     {
       "text": "Operators",
       "type": "label"
