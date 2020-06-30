@@ -116,6 +116,11 @@ doByOrder(tasks, console.log.bind(console)); // expect to be ["a", "b", "c"]
 
 <iframe height="1280px" width="100%" src="https://repl.it/@JacobHsu/Promise3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+
+在不使用`async/await`的情況下，順序執行一組異步代碼函數，並輸出最後的結果。
+
+<iframe height="1400px" width="100%" src="https://repl.it/@JacobHsu/Promise4?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 ### References
 
 [把setTimeout包裝成Promise、等待所有setTimout的callback function執行完程式流程才往下執行](https://dotblogs.com.tw/shadow/2017/11/17/112535)

@@ -47,6 +47,7 @@ boo.laterHello(); // (1 sec...) Hi!, I am undefined
 
 ```js
 // Self — this 的替身
+// bad 請別儲存 this 為參考。請使用箭頭函式或是 Function#bind
   laterHello() {
     var self = this;
     // 先把這邊的this(指向class內部)存起來
