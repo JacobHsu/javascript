@@ -99,6 +99,11 @@
       "text": "call、apply、bind",
       "type": "link",
       "path": "global/function.html"
+    },
+    {
+      "text": "Promise",
+      "type": "link",
+      "path": "global/promise.html"
     },      
     {
       "text": "Operators",
@@ -253,11 +258,6 @@
     {
       "text": "F2E",
       "type": "label"
-    },
-    {
-      "text": "Promise",
-      "type": "link",
-      "path": "promise.html"
     },
     {
       "text": "GraphQL",

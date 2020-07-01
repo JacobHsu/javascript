@@ -121,6 +121,10 @@ doByOrder(tasks, console.log.bind(console)); // expect to be ["a", "b", "c"]
 
 <iframe height="1400px" width="100%" src="https://repl.it/@JacobHsu/Promise4?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
 
+[Promise.race()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise/race)
+
+<iframe height="1500px" width="100%" src="https://repl.it/@JacobHsu/Promise5?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+
 ### References
 
 [把setTimeout包裝成Promise、等待所有setTimout的callback function執行完程式流程才往下執行](https://dotblogs.com.tw/shadow/2017/11/17/112535)
