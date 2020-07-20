@@ -101,6 +101,29 @@ arr = [...[-2, -1, 0], ...arr];
 console.log(arr); // [-2, -1, 0, 1, 2, 3, 4, 5]  
 ```
 
+## [fill()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+
+Array.prototype.fill() 方法會將陣列中索引的第一個到最後一個的每個位置全部填入一個靜態的值。
+
+```js
+const array1 = [1, 2, 3, 4];
+
+// fill with 5 from position 1
+console.log(array1.fill(5, 1));
+// expected output: [1, 5, 5, 5]
+
+console.log(array1.fill(6));
+// expected output: [6, 6, 6, 6]
+```
+
+```js
+  const tasksArr = props.tasks; // [1,2,3,4]
+  const participants = tasksArr.length;
+  const queuers  = 6- tasksArr.length; //4 ['Wating...','Wating...']
+  let waitingArr = queuers ===0 ? [] : Array(queuers).fill('Wating...');
+  const totalArr = tasksArr.concat(waitingArr);
+```
+
 ## example
 
 [unshift](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift) 把數據插入陣列頭部
@@ -116,3 +139,4 @@ opts.unshift({
     text: 'select_title'
 })
 ```
+
