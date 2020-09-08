@@ -45,6 +45,11 @@
       "path": "array/filter.html"
     },
     {
+      "text": "Array Splice",
+      "type": "link",
+      "path": "array/splice.html"
+    },
+    {
       "text": "Good Part",
       "type": "link",
       "path": "array/good_part.html"
