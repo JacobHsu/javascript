@@ -202,6 +202,11 @@
       "path": "cases/math.html"
     },
     {
+      "text": "Case delay",
+      "type": "link",
+      "path": "cases/delay.html"
+    },
+    {
       "text": "Note",
       "type": "label"
     },
