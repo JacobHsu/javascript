@@ -45,6 +45,11 @@
       "path": "array/filter.html"
     },
     {
+      "text": "Array Fill",
+      "type": "link",
+      "path": "array/fill.html"
+    },
+    {
       "text": "Array Splice",
       "type": "link",
       "path": "array/splice.html"
