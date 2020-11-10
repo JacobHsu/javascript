@@ -32,3 +32,14 @@ console.log(firstRegExp.test('jacob.hsu.tw')); //false
 |\S	|非空白字元	|[^ \r\t\n\f]
 |[xyz]	|比對中括弧內的任一個字元	|/[ecm]/ 可比對 “welcome” 中的 “e” 或 “c” 或 “m”
 |[^xyz]	|比對不在中括弧內出現的任一個字元	|/[^ecm]/ 可比對 “welcome” 中的 “w”、”l”、”o”，可見出其與 [xyz] 功能相反。（同時請注意 /^/ 與 [^] 之間功能的不同。）
+
+## match
+
+[String.prototype.match()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/String/match)
+
+```js
+const pa = '賓夕法尼亞州是美國的州份之一，正式名稱為「賓夕法尼亞邦」(Commonwealth of Pennsylvania)';
+const pa_us = pa.match( /\((.+?)\)/g ) // ["(Commonwealth of Pennsylvania)"]
+const res = pa_us[0].replace(')', '').substring(1);
+console.log(res) // "Commonwealth of Pennsylvania"
+```

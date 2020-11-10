@@ -241,6 +241,11 @@
       "path": "RESTfulAPI.html"
     },
     {
+      "text": "Promise ",
+      "type": "link",
+      "path": "api/Promise.html"
+    },
+    {
       "text": "Deep Copy",
       "type": "link",
       "path": "copy.html"
