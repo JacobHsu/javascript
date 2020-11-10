@@ -23,3 +23,57 @@ const map1 = array1.map(x => x * 2);
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]
 ```
+
+
+`res.map( (v,i)=>{ console.log(i,v) } )`
+
+react-ts-epirus\src\utils\api\queries.ts
+
+```js
+ .then(postEthGetFilterLogsRes=> {
+    let hashList = [], fromtoArr=[];
+    postEthGetFilterLogsRes.map( v=> {
+        let transactionHash = v.transactionHash;
+        fromtoArr.push( { transactionHash:transactionHash })
+        hashList.push(v.transactionHash)
+    })
+
+    return Promise.all(hashList.map((hash) => fetchData3(`/transactions/${hash}`)))
+    .then((values) => {
+
+    let transactionsArr = [];
+    values.map( (v,i)=>{
+        let timestampISO = v.timestampISO;
+        let value = v.functionMeta.params.length === 0 ? 0 : v.functionMeta.params[1].value
+        let add_transactionHash = fromtoArr[i].transactionHash
+        transactionsArr.push( { 
+            timestampISO: timestampISO, value: value,
+            add_transactionHash: add_transactionHash
+        } )
+    })
+    return transactionsArr;
+    })
+    .catch(() => {
+
+    })
+    .finally(() => {
+
+    });
+})
+.then( res=> {
+
+    let ans = res as any[];
+    let resans = ans.map(v=> {
+        const timestampISO = v.timestampISO;
+        const value = v.value;
+         const add_transactionHash = v.add_transactionHash;
+        return {
+        'timestampISO': timestampISO,
+        'value': value,
+        'hash': add_transactionHash,
+        };
+    })
+
+    return resans;
+})
+```
