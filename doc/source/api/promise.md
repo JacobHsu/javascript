@@ -69,3 +69,10 @@ promise(1)
     console.log('done');
   })
 ```
+
+```js
+const res = onPress() // 異步函數
+if( res & res.then ) {
+  res.then((close).catch( ()=>{}) ) //等函數調用完 調用close
+} else close() //否則 立馬調用close
+```

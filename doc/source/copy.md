@@ -68,6 +68,36 @@ console.log(obj1.body === obj2.body); // true
 但他們會共用同一個`obj1.body`
 所以修改obj2.body.a時也會修改到舊的
 
+vue-element-admin/blob/master/mock/[utils.js](https://github.com/PanJiaChen/vue-element-admin/blob/master/mock/utils.js)
+
+```js
+/**
+ * This is just a simple version of deep copy
+ * Has a lot of edge cases bug
+ * If you want to use a perfect deep copy, use lodash's _.cloneDeep
+ * @param {Object} source
+ * @returns {Object}
+ */
+function deepClone(source) {
+  if (!source && typeof source !== 'object') {
+    throw new Error('error arguments', 'deepClone')
+  }
+  const targetObj = source.constructor === Array ? [] : {}
+  Object.keys(source).forEach(keys => {
+    if (source[keys] && typeof source[keys] === 'object') {
+      targetObj[keys] = deepClone(source[keys])
+    } else {
+      targetObj[keys] = source[keys]
+    }
+  })
+  return targetObj
+}
+
+const routes = deepClone([...constantRoutes, ...asyncRoutes])
+```
+
+https://lodash.com/docs/4.17.15#cloneDeep
+
 ## [Object.assign](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
 
 https://jsbin.com/cejijipevo/edit?js,console
