@@ -1,6 +1,15 @@
 title: 問題
 ---
 
+# [Math](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math)
+
+`Math.pow(x, y)` 回傳 x 的 y 次方
+
+```js
+const decimals = 6
+console.log(Math.pow(10, decimals)) //1000000`
+```
+
 # 浮點數運算的坑
 
 [JavaScript 浮点数陷阱及解法](https://github.com/camsong/blog/issues/9)
