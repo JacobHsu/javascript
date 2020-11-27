@@ -261,6 +261,11 @@
       "path": "scope.html"
     },
     {
+      "text": "export",
+      "type": "link",
+      "path": "export.html"
+    },
+    {
       "text": "Variable",
       "type": "link",
       "path": "variable.html"

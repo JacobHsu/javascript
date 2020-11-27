@@ -2,7 +2,7 @@ title: 正規表達式 regexp
 ---
 
 [正規表達式](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Regular_Expressions)  
-[2019年JS正则大全(常用)](https://juejin.im/post/5d245d4151882555300feb77?utm_source=gold_browser_extension)  
+[2019年JS正则大全(常用)](https://kknews.cc/zh-tw/code/6amrlkm.html)  
 
 
 
