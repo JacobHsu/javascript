@@ -5,6 +5,8 @@ title: number
 
 Math.pow()傳回指定乘冪數的基底運算式值
 
+`console.log( Math.pow(10, 3) ); // 1000`
+
 [Math.round()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/round) 函數回傳四捨五入後的近似值  
 
 [Math.floor()](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Math/floor) 函式會回傳無條件捨去後的最大整數  

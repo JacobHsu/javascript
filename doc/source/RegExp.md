@@ -34,6 +34,16 @@ export const isValidPWD = (pwd: string) => {
 }
 ```
 
+account
+
+驗證規則：字母、數字、下劃線組成，字母開頭
+
+```js
+export const isValidAccount = (account: string) => {
+  const reg = /^[a-zA-z]\w{8,20}$/
+  return reg.test(account)
+}
+```
 
 email
 
