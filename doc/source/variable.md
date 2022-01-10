@@ -1,6 +1,24 @@
 title: Variable
 ---
 
+JavaScript的數據類型
+
+JavaScript一共有8種數據類型
+其中有7種基本數據類型：
+
+ES5的5種：`Null`，`undefined`，`Boolean`，`Number`，`String`，
+
+ES6新增：`Symbol` 表示獨一無二的值
+
+ES10新增：`BigInt` 表示任意大的整數
+
+一種引用數據類型：
+
+`Object`（本質上是由一組無序的鍵值對組成）
+
+包含function,Array,Date等。JavaScript不支持創建任何自定義類型的數據，也就是說JavaScript中所有值的類型都是上面8中之一。
+
+
 ```js
 
 var name = 'Jacob';
