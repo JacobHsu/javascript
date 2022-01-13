@@ -140,6 +140,11 @@
       "path": "operators/destructuring_assignment.html"
     },
     {
+      "text": "Nullish coalescing operator (??)",
+      "type": "link",
+      "path": "operators/nullish_coalescing.html"
+    },
+    {
       "text": "Statements",
       "type": "label"
     },
