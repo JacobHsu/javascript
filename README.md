@@ -42,3 +42,9 @@ ERROR Deployer not found: git
 `rm -rf .deploy_git`  
 `hexo g`  
 `hexo d`  
+
+
+## References
+
+Asabeneh / [30-Days-Of-JavaScript](https://github.com/Asabeneh/30-Days-Of-JavaScript)
+
