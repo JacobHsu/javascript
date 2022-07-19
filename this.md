@@ -55,6 +55,40 @@ var obj = {
 obj.x()
 ```
 
+```js
+var name = '全域'
+var obj = {
+  n: function() {
+    var name = '新函式的';   
+    setTimeout(function(){
+      console.log(this.name) // '全域'
+    },0)
+  }
+}
+obj.n()
+```
+
+```js
+var name = '全域'
+var obj = {
+  //name : '物件的',
+  x: function() {
+    name = '函式的';  
+    setTimeout(function(){
+      console.log(this.name) // '函式的'
+    },0)
+  }
+  n: function() {
+    var name = '新函式的';   
+    setTimeout(function(){
+      console.log(this.name) // '函式的'
+    },0)
+  }
+}
+obj.x()
+obj.n()
+```
+
 ## 簡易呼叫
 
 ```js
