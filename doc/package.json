@@ -5,9 +5,9 @@
     "version": "3.8.0"
   },
   "dependencies": {
-    "hexo": "^3.8.0",
+    "hexo": "^6.3.0",
     "hexo-cli": "^1.0.3",
-    "hexo-deployer-git": "^1.0.0",
+    "hexo-deployer-git": "^4.0.0",
     "hexo-renderer-ejs": "^0.2.0",
     "hexo-renderer-less": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
